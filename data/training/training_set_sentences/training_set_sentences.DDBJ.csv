@@ -1,0 +1,34 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+DDBJ,DDBJ,1,True,PMC12060660,"DFAST, DDBJ Fast Annotation and Submission Tool."
+DDBJ,DDBJ,1,True,PMC12060660,(GTC20076) have been deposited in DDBJ ( https://www.ddbj.nig.ac.jp/index.html ) under the accession number AP039366 .
+DDBJ,DDBJ,1,True,PMC11941168,RNA sequencing data have been deposited at the DDBJ under accession number PRJDB20100.
+DDBJ,DDBJ,1,True,PMC11941168,RNA sequencing data in this study have been deposited at the DDBJ ( https://www.ddbj.nig.ac.jp ) under accession number PRJDB20100.
+DDBJ,DDBJ,1,True,PMC10915500,"BAOK01000001 and BAOK01000002 in DDBJ/EMBL/GenBank (Shoguchi et al., 2013 )."
+ENA,GenBank,1,True,PMC10915500,"BAOK01000001 and BAOK01000002 in DDBJ/EMBL/GenBank (Shoguchi et al., 2013 )."
+DDBJ,DDBJ,1,True,PMC11078382,The released project(s) is available on the DDBJ BioProject listing page.
+BioProject,BioProject,1,True,PMC11078382,The released project(s) is available on the DDBJ BioProject listing page.
+DDBJ,DDBJ,1,True,PMC11078382,https://ddbj.nig.ac.jp/resource/bioproject/PRJDB17212 The released project(s) are also available at the NCBI BioProject under Accession number PRJDB17212.
+ENA,NCBI,1,True,PMC11078382,https://ddbj.nig.ac.jp/resource/bioproject/PRJDB17212 The released project(s) are also available at the NCBI BioProject under Accession number PRJDB17212.
+BioProject,BioProject,1,True,PMC11078382,https://ddbj.nig.ac.jp/resource/bioproject/PRJDB17212 The released project(s) are also available at the NCBI BioProject under Accession number PRJDB17212.
+DDBJ,DDBJ,1,True,PMC6323954,"The data in GenBank and the collaborating databases, ENA and DDBJ, are submitted by investigators to one of the three databases."
+ENA,GenBank,1,True,PMC6323954,"The data in GenBank and the collaborating databases, ENA and DDBJ, are submitted by investigators to one of the three databases."
+ENA,ENA,1,True,PMC6323954,"The data in GenBank and the collaborating databases, ENA and DDBJ, are submitted by investigators to one of the three databases."
+DDBJ,DDBJ,1,True,PMC12060660,"The DDBJ Fast Annotation and Submission Tool ( 12 ) predicted 2,807 coding sequences, nine ribosomal RNAs, 52 transfer RNAs, and one CRISPR sequence."
+DDBJ,DDBJ,1,True,PMC12060660,"DRA, DDBJ Sequence Read Archive."
+DDBJ,DDBJ,1,True,PMC12060660,Raw sequence data for GTC20076 have been deposited in the DDBJ/Sequence Read Archive under accession numbers DRR631455 and DRR631456 .
+DDBJ,DDBJ,1,True,PMC11812343,This draft genome research has been cited at DDBJ/ENA/GenBank with accession number JBHIKZ000000000 .
+ENA,ENA,1,True,PMC11812343,This draft genome research has been cited at DDBJ/ENA/GenBank with accession number JBHIKZ000000000 .
+ENA,GenBank,1,True,PMC11812343,This draft genome research has been cited at DDBJ/ENA/GenBank with accession number JBHIKZ000000000 .
+DDBJ,DDBJ,1,True,PMC11556037,This Whole Genome Shotgun project has been deposited at DDBJ/ENA/GenBank with the following accession number JBFUXV000000000 .
+ENA,ENA,1,True,PMC11556037,This Whole Genome Shotgun project has been deposited at DDBJ/ENA/GenBank with the following accession number JBFUXV000000000 .
+ENA,GenBank,1,True,PMC11556037,This Whole Genome Shotgun project has been deposited at DDBJ/ENA/GenBank with the following accession number JBFUXV000000000 .
+DDBJ,DDBJ,1,True,PMC11237730,The whole-genome sequence has been deposited at DDBJ/ENA/GenBank under the accession number CP135236 .
+ENA,ENA,1,True,PMC11237730,The whole-genome sequence has been deposited at DDBJ/ENA/GenBank under the accession number CP135236 .
+ENA,GenBank,1,True,PMC11237730,The whole-genome sequence has been deposited at DDBJ/ENA/GenBank under the accession number CP135236 .
+DDBJ,DDBJ,1,True,PMC12123911,We deposited raw read sequences obtained in this study in GenBank/DDBJ/EMBL (BioProject no.
+ENA,GenBank,1,True,PMC12123911,We deposited raw read sequences obtained in this study in GenBank/DDBJ/EMBL (BioProject no.
+ENA,ENA,1,True,PMC12123911,We deposited raw read sequences obtained in this study in GenBank/DDBJ/EMBL (BioProject no.
+BioProject,BioProject,1,True,PMC12123911,We deposited raw read sequences obtained in this study in GenBank/DDBJ/EMBL (BioProject no.
+DDBJ,DDBJ,1,True,PMC11183081,"The genome assembly has been deposited in DDBJ/ENA/GenBank under the accession number JBDPZO000000000 78 , and NGDC under the GSA accession CRA015002 79 ."
+ENA,ENA,1,True,PMC11183081,"The genome assembly has been deposited in DDBJ/ENA/GenBank under the accession number JBDPZO000000000 78 , and NGDC under the GSA accession CRA015002 79 ."
+ENA,GenBank,1,True,PMC11183081,"The genome assembly has been deposited in DDBJ/ENA/GenBank under the accession number JBDPZO000000000 78 , and NGDC under the GSA accession CRA015002 79 ."

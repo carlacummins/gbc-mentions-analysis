@@ -1,0 +1,10 @@
+[
+    {"names":["BacDive", "Bacterial Diversity Metadatabase"], "is_gcbr":1},
+    {"names":["BAR", "Bio-Analytic Resource for Plant Biology"], "topics":["plant", "genome"], "is_gcbr":1},
+    {"names":["ChEBI"], "is_gcbr":1},
+    {"names":["CIViC", "Clinical Interpretation of Variants in Cancer"], "topics":["cancer", "genomics"], "is_gcbr":1},
+    {"names":["PDB", "Protein Data Bank"], "topics":["protein"], "is_gcbr":1},
+    {"names":["RGD", "Rat Genome Database"], "topics":["rat", "Rattus norvegicus", "rodent"], "is_gcbr":1},
+    {"names":["SGD", "Saccharomyces Genome Database"], "topics":["yeast", "Saccharomyces"], "is_gcbr":1},
+    {"names":["ENA", "European Nucleotide Archive", "NCBI", "GenBank", "ERA", "SRA"], "topics":["nucleotide", "sequence", "archive"], "is_gcbr":1}
+]

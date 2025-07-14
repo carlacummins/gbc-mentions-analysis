@@ -1,0 +1,10 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+Bgee,Bgee,1,True,PMC12082848,"The Swiss Institute of Bioinformatics develops two databases across multi-species for the study of gene expression and orthology: Bgee and Orthologous MAtrix (OMA, an orthology database)."
+Bgee,Bgee,1,True,PMC12082848,"This study combines the RIKEN BioResource data with Resource Description Framework (RDF) datasets from Bgee, a gene expression database, the OMA, the DisGeNET, a human gene-disease association, Mouse Genome Informatics (MGI), UniProt, and four disease ontologies in the RIKEN BioResource MetaDatabase."
+Bgee,Bgee,0,True,PMC12082848,"Finally, we compared the performance of the federated SPARQL query via the remote Bgee SPARQL endpoint with the performance of a centralized SPARQL query using the Bgee dataset as part of the RIKEN BioResource MetaDatabase."
+Bgee,Bgee,1,True,PMC12082848,"For this study, we used two of the SIB RDF datasets for the study of gene expression and orthology: Bgee and OMA."
+Bgee,Bgee,1,True,PMC12082848,Bgee [ 10 ] is a well-established gene expression database that integrates curated healthy wild-type expression data across a wide range of data sources to provide a comparable reference of normal gene expression across multiple animal species.
+Bgee,Bgee,1,True,PMC7698756,"At the next step, we performed the comparisons of expression patterns of GV-related genes in different tissues with the use of Bgee [ 49 ]."
+Bgee,Bgee,1,True,PMC7698756,Comparative analysis of the expression of GV-related genes in the tissues was carried out by the “Expression comparison” function ( https://bgee.org/?page=expression_comparison ) provided on the website of Bgee resource [ 49 ].
+Bgee,Bgee,1,True,PMC7698756,Table S4: Bgee expression analysis.
+Bgee,Bgee,0,False,PMC6436688,"Projects such as the NIH NCATS Translator, Data Commons, Illuminating the Druggable Genome, Bgee, and the Monarch Initiative demonstrate that efforts to aggregate and integrate data are seen as a worthwhile undertaking."

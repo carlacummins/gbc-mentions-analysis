@@ -1,0 +1,43 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+SGD,SGD,0,False,PMC12082818,"Patient demographics, preoperative laboratory measurements, and RRs were compared between patients with single-gland disease (SGD) versus multigland disease (MGD)."
+SGD,SGD,0,False,PMC12082818,The predictive threshold for SGD was subsequently validated on the following cohort of 115 patients.
+SGD,SGD,0,False,PMC12082818,"Of 2368 patients included, 1585 (66.9%) patients had SGD, and 783 (33.1%) had MGD."
+SGD,SGD,0,False,PMC12082818,"Patients with SGD had higher median (IQR) RRs than the MGD group (0.8 [0.5-1.3] vs 0.4 [0.3-0.7], P <.001)."
+SGD,SGD,0,False,PMC12082818,"After adjusting for age, preoperative calcium and PTH, reoperative parathyroidectomy, and gland weight, the RR was an independent predictor (OR 2.155, P <.001) of SGD."
+SGD,SGD,0,False,PMC11937440,Submarine groundwater discharge (SGD) is a nutrient source to coastal waters.
+SGD,SGD,0,False,PMC11937440,"However, most SGD estimates are restricted to a local scale and hardly distinguish contributions from fresh (FSGD) and recirculated (RSGD) SGD."
+SGD,SGD,0,False,PMC11937440,"Here, we compiled data on radium/radon of groundwater ( n ~ 2000) and seawater ( n ~ 10,000) samples along ~18,000 km of China’s coastal seas to resolve large scale FSGD and RSGD and their associated nutrient loads."
+SGD,SGD,0,False,PMC11937440,Nearshore-scale FSGD ( ~ 3.56 × 10 8 m 3 d −1 ) was only 2% of the total SGD but comparable to RSGD in terms of nutrient loads.
+SGD,SGD,0,False,PMC11937440,"Despite large uncertainties quantified via Monte Carlo simulations, SGD was a dominant contributor to China’s coastal nutrient budgets, with dissolved inorganic nitrogen, phosphorus and silicate fluxes of ~395, 2.9, and 581 Gmol a −1 , respectively."
+SGD,SGD,0,False,PMC11971587,This study sought to quantify uptake rates of non‐invasive prenatal screening for de novo single‐gene disorders (NIPS‐SGD) in pregnant subjects whose reproductive partner is of advanced paternal age (APA) and to determine individual parameters associated with higher test uptake rates.
+SGD,SGD,0,False,PMC11971587,"A cross‐sectional study was performed of pregnant subjects who received prenatal genetic counseling at a mid‐size tertiary care center and were offered NIPS‐SGD for APA (defined as 45 or older at delivery) between June 1, 2017 and April 13, 2021."
+SGD,SGD,0,False,PMC11971587,The outcome was measured as subjects who elected to do NIPS‐SGD versus subjects who declined.
+SGD,SGD,0,False,PMC11971587,186 subjects were offered NIPS‐SGD and met inclusion criteria.
+SGD,SGD,0,False,PMC11971587,AUC for the final regression model predicting NIPS‐SGD uptake was 0.79.
+SGD,SGD,0,False,PMC12008763,"In this economic evaluation of a simulated cohort of adult patients in Singapore, LVAD's cost per quality-adjusted life-year gained was 106 458 in Singapore dollars (SGD; US $79 446) for inotrope-dependent patients and SGD 174 798 (US $130 446) for inotrope-independent patients, with 59% and 19% probabilities of attaining cost-effectiveness, respectively."
+SGD,SGD,0,False,PMC12008763,Costs were estimated (in 2023 Singapore dollars [SGD]) using cohort billing data from 2017 to 2022 and National Heart Centre Singapore LVAD charges.
+SGD,SGD,0,False,PMC12008763,"Health care costs, quality-adjusted life-years (QALYs), and incremental cost-effectiveness ratio (ICER) evaluated against a threshold of SGD 114 000 (US $85 075) per QALY gained."
+SGD,SGD,0,False,PMC12008763,"In the base case analysis, LVAD yielded an additional 3.45 QALYs at an incremental cost of SGD 404 678 (US $301 999), producing an ICER of SGD 117 370 (US $87 590) per QALY gained for the transplant-ineligible population."
+SGD,SGD,0,False,PMC12008763,"The ICER differed for inotrope-use subgroups at SGD 106 458 (US $79 446) per QALY gained for inotrope-dependent patients and SGD 174 798 (US $130 446) per QALY gained for inotrope-independent patients (with 59% and 19% probabilities, respectively, of attaining high value)."
+SGD,SGD,0,True,PMC11088924,"SGD chromatin was prepared with recombinant yeast histone octamers at a high nucleosome density (histone-to-DNA ratio = 0.8) and incubated with the TF Reb1 and/or the indicated remodelers, leading to the formation of distinct nucleosome density profiles."
+SGD,SGD,0,True,PMC11088924,This has been most clearly demonstrated in studies based on reconstitution of yeast chromatin with the salt gradient dialysis (SGD) method ( Figure 1B ) or histone chaperone-based chromatin assembly systems.
+SGD,SGD,0,True,PMC11088924,"However, the incubation of SGD chromatin with yeast whole-cell extract and ATP does result in a typical in vivo -like nucleosome positioning pattern [ 35 ]."
+SGD,SGD,0,True,PMC11013434,"In M. speciosa , a single protein localization assay in yeast revealed that MspSGD was localized in the nucleus and MspTHAS candidates were localized in the cytoplasm."
+SGD,SGD,0,True,PMC11013434,"This may be required to promote the re-localization of the HpaTHAS gene towards the nucleus to interact with HpaSGD , as occurs at the protein level in M. speciosa [ 19 ] when expressed in yeast and C. roseus cells [ 16 ]."
+SGD,SGD,1,True,PMC11556787,"Gene ( S. cerevisiae ) HRD1 Saccharomyces Genome Database (SGD) ( Wong et al., 2023 ) YOL013C"
+SGD,SGD,1,True,PMC11556787,"Gene ( S. cerevisiae ) HRD3 Saccharomyces Genome Database (SGD) ( Wong et al., 2023 ) YLR207W"
+SGD,SGD,1,True,PMC11556787,"Gene ( S. cerevisiae ) USA1 Saccharomyces Genome Database (SGD) ( Wong et al., 2023 ) YML029W"
+SGD,SGD,1,True,PMC11556787,"Gene ( S. cerevisiae ) DER1 Saccharomyces Genome Database (SGD) ( Wong et al., 2023 ) YBR201W"
+SGD,SGD,1,True,PMC11556787,"Gene ( S. cerevisiae ) YOS9 Saccharomyces Genome Database (SGD) ( Wong et al., 2023 ) YDR057W"
+SGD,SGD,1,True,PMC11904613,"Therefore, we attempted to uncover genes within S. cerevisiae which may have a role in genome stability by screening the Saccharomyces Genome Database (SGD) for genes that are involved in DNA replication, meiosis, or decreased resistance to genotoxins."
+SGD,SGD,1,True,PMC11545921,"“Mito” function in SGD description: Whether or not the Saccharomyces Genome Database description of the gene’s function includes the words “mitochondria”, “mitochondrial”, or “respiration”, or other closely related term (e.g., “oxidative phosphorylation” would be considered a closely-related term)."
+SGD,SGD,1,True,PMC11701598,"To accommodate and curate these reference-orientated resource, the Saccharomyces Genome Database (SGD, https://www.yeastgenome.org ) ( 6 ) was developed >25 years ago and continued serving the yeast community ( 7 ), providing encyclopedic information regarding the genome, genes, proteins and other encoded features of S. cerevisiae ."
+SGD,SGD,1,True,PMC11701598,"Compared with the classic yeast genomics databases such as SGD ( 6 ) and YGOB ( 11 ), ScRAPdb shines with its unique emphasis on population-scaled pangenome characterization and multi-omics integration."
+SGD,SGD,1,True,PMC12081708,"This detailed information is sourced from the most recent comprehensive datasets available in the Saccharomyces Genome Database (SGD), which can be further explored at http://www.yeastgenome.org ."
+SGD,SGD,1,True,PMC12081708,The process begins with obtaining GO annotations from the SGD for a given yeast dataset.
+SGD,SGD,1,True,PMC11088543,SGD ( https://www.yeastgenome.org/ ) and BioGRID 4.4 ( https://thebiogrid.org/ ) were both initially examined for Prs/Prs interactions.
+BioGRID,BioGRID,1,True,PMC11088543,SGD ( https://www.yeastgenome.org/ ) and BioGRID 4.4 ( https://thebiogrid.org/ ) were both initially examined for Prs/Prs interactions.
+SGD,SGD,1,True,PMC11088543,SGD and BioGRID databases were systematically scrutinized by selecting interactions of yeast Prs with other Prs proteins and seemingly unrelated proteins.
+BioGRID,BioGRID,1,True,PMC11088543,SGD and BioGRID databases were systematically scrutinized by selecting interactions of yeast Prs with other Prs proteins and seemingly unrelated proteins.
+SGD,SGD,1,True,PMC11704421,"All data about auxotrophic experiments were downloaded from The Saccharomyces Genome Database (SGD, https://www.yeastgenome.org/ )."
+SGD,SGD,1,True,PMC10158836,"As one of the first model organism knowledgebases, Saccharomyces Genome Database (SGD) has been supporting the scientific research community since 1993."

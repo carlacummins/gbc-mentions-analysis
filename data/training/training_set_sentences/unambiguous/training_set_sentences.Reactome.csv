@@ -1,0 +1,41 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+Reactome,Reactome,0,True,PMC12090728,Reactome includes viral life cycles that capture a broad range of virus-induced human pathology.
+Reactome,Reactome,0,True,PMC12090728,Reactome represents the molecular details of these processes as the properties of the nodes and edges of a graph database.
+Reactome,Reactome,0,True,PMC12090728,"Reactome’s annotations are meticulously curated by PhD-level scientists and peer-reviewed by field experts, ensuring high-quality data to support translational research and aid in the discovery of clinically actionable targets in various diseases."
+Reactome,Reactome,0,True,PMC11944036,"However, to our knowledge, the Reactome knowledgebase has not been utilized to develop these types of predictive models."
+Reactome,Reactome,0,True,PMC11303191,"Enrichment was done using the Reactome database (A) and the Gene Ontology database for biological processes (B) , molecular function (C) and cell components (D) ."
+Reactome,Reactome,0,True,PMC11303191,"Enrichment was performed using the Reactome database (A) and the Gene Ontology database for biological processes (B) , molecular function (C) and cell components (D) ."
+Reactome,Reactome,0,True,PMC11611169,"Next, the “Functional Annotation Tool” was selected and “Gene Ontology” and “Reactome” options were checked."
+Reactome,Reactome,0,True,PMC11149494,(B) GSEA results of Reactome respiratory chain electron transport chain.
+Reactome,Reactome,0,True,PMC11149494,(C) GSEA results of the Reactome tricarboxylic acid cycle and the electron transport chain of the respiratory chain.
+Reactome,Reactome,0,True,PMC11149494,(E) GSEA results for Reactome mitochondrial translation.
+Reactome,Reactome,0,True,PMC11149494,REACTOME_RESPIRATORY_ELECTRON_TRANSPORT 2.418664381 1E‐10 3.57143 e‐08 3.06917 e‐08
+Reactome,Reactome,0,True,PMC11149494,REACTOME_THE_CITRIC_ACID_TCA_CYCLE_AND_RESPIRATORY_ELECTRON_TRANSPORT 2.291825812 1E‐10 3.57143 e‐08 3.06917 e‐08
+Reactome,Reactome,0,True,PMC11853888,"( c ) Functional enrichment analysis of 35 HMEV-relevant proteins against GO biological process, KEGG, and reactome."
+Reactome,Reactome,0,True,PMC10537976,"By employing gene ontology (GO) analysis and REACTOME analysis, our goal was to clarify the induction process of senescence and identify “true"" key factors that could serve as universal markers for senescent cells."
+Reactome,Reactome,0,True,PMC10537976,"To further investigate the function of SASP, we conducted an in-depth study using REACTOME analysis, which allows for the identification of significant signaling circuits in protein datasets."
+Reactome,Reactome,0,True,PMC10537976,5 REACTOME analysis of SASP classified by time series.
+Reactome,Reactome,0,True,PMC10537976,C The main outcomes of the REACTOME analysis are summarized.
+Reactome,Reactome,0,True,PMC10537976,REACTOME analysis of SASP classified by time series.
+Reactome,Reactome,0,True,PMC11488306,"Metascape is a tool designed to analyze and interpret OMICs‐based data, and Reactome is a manually curated database that provides molecular details across a broad range of physiological and pathological biological processes in humans."
+Reactome,Reactome,0,True,PMC11855622,"To gain deeper insights into the metabolic differences between two groups, the Reactome gene set collection from the MSigDB was utilized ( Figure 4 D, Table S6 )."
+Reactome,Reactome,1,True,PMC12090728,"Reactome (reactome.org) is a manually curated, peer-reviewed, open-source, open-access pathway knowledgebase of essential human cellular functions."
+Reactome,Reactome,1,True,PMC12090728,"Reactome (reactome.org) is a free, open-source, open-access, manually curated, and peer-reviewed pathway knowledgebase that provides a molecular-level blueprint of human cellular physiology ( 1 )."
+Reactome,Reactome,1,True,PMC11944036,Methods : We created a dataset ready for machine learning using chemical representations of all pathway-annotated compounds available from the Reactome knowledgebase.
+Reactome,Reactome,1,True,PMC11944036,"Results : While models trained on a prior corresponding KEGG dataset with 502 pathways scored a mean Matthew’s correlation coefficient (MCC) of 0.847 and a 0.0098 standard deviation, the models trained on the Reactome dataset with 3985 pathways demonstrated improved performance with a mean MCC of 0.916, but with a higher standard deviation of 0.0149."
+Reactome,Reactome,1,True,PMC11944036,"Conclusions : These results indicate that the pathways in Reactome can also be effectively predicted, greatly increasing the number of human-defined pathways available for prediction."
+Reactome,Reactome,1,True,PMC11944036,Knowledgebases such as the Kyoto Encyclopedia of Genes and Genomes (KEGG) [ 4 ] and Reactome [ 5 ] contain compound entries along with pathway annotations indicating the pathways that the compounds are associated with.
+Reactome,Reactome,1,True,PMC11477412,"The Reactome analysis identified 398 biological pathways, narrowed down to 172 pathways using a medium threshold ( p -value < 1 × 10 −4 )."
+Reactome,Reactome,1,True,PMC11477412,"Although the biological process had the highest number of hits (1350 terms), the Reactome pathways had the highest number of pathway hits (468 pathways), making the Reactome more suitable for gene network analysis."
+Reactome,Reactome,1,True,PMC11477412,"Secondly, we compared 12 databases compatible with gene set enrichment analysis and found the following number of pathways identified by stress-resistance genes with “high” confidence of p -value ≤ 0.0001 (out of the total number of pathways in the database): Reactome 122 (out of 143); PubChem 54 (out of 65); GeneGo 51 (out of 58); Qiagen 58 (out of 59); R&D Systems 12 (out of 12); PharmGKB 9 (out of 10); and Cell Signaling Technology 8 (out of 9)."
+Reactome,Reactome,1,True,PMC11477412,We chose Reactome as it provided the highest number of pathways (accessed on 17 September 2024).
+Reactome,Reactome,1,True,PMC11477412,"Two pathway analyses showed categories relevant to stress resistance with the highest significance among all of the pathways, the Reactome (FDR = 3.12 × 10 −51 ) and the STRING-DB Biological process (FDR = 4.08 × 10 −59 )."
+Reactome,Reactome,1,True,PMC11534268,"Our analysis encompassed a total of 6,970 pathways from the C2 curated gene sets in the Molecular Signatures Database (MsigDB) [ 46 ], which includes 1,632 REACTOME pathways [ 47 ]."
+Reactome,Reactome,1,True,PMC11534268,"To facilitate interpretation, we concentrated on significant pathways within the REACTOME database."
+Reactome,Reactome,1,True,PMC11534268,We identified 37 significant REACTOME pathways using either the Gene-wFisher or SNP-IVW methods (Figs D-AN in S1 Text ).
+Reactome,Reactome,1,True,PMC11534268,"This heatmap displays gene-level p-values for 115 unique genes, as detailed in S3 Table , across 33 significant REACTOME pathways listed in S2 Table ."
+Reactome,Reactome,1,True,PMC11534268,"Among these 37 pathways, ten are associated with the Signal Transduction group as defined by REACTOME."
+Reactome,Reactome,1,True,PMC11826265,"The main enriched biological pathways included reactome M phase, reactome DNA repair, reactome RHO GTPase effectors, reactome translation, reactome cell cycle checkpoints, reactome mitotic metaphase and anaphase, reactome mitotic prometaphase, reactome separation of sister chromatids, and reactome S phase ( Figure 4A-4I )."
+Reactome,Reactome,1,True,PMC11303191,Differential gene expression was assessed using the limma-trend pipeline and pathway enrichment identified using Reactome and GO analysis.
+Reactome,Reactome,1,True,PMC11303191,"Pathway enrichment and network analysis was performed on differentially expressed genes using the ReactomePA (version 1.42) and clusterProfiler (version 4.6.0) R packages in RStudio ® (version 4.2.2) ( Yu et al., 2012 ; Yu and He, 2016 )."
+Reactome,Reactome,1,True,PMC11303191,"Pathways were examined across the Reactome ( Figure 3A ) and Gene Ontology databases for biological processes ( Figure 3B ), molecular function ( Figure 3C ) and cell component ( Figure 3D )."

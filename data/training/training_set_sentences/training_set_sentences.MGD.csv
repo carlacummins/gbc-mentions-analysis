@@ -1,0 +1,55 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+MGD,MGD,0,False,PMC12109715,"In this study, we aimed to determine the effect of various mammographic technologies on the in vivo mean glandular doses (MGDs) that are received in clinical settings."
+MGD,MGD,0,False,PMC12109715,"Methods : The MGDs and applied acquisition parameters from 194,608 mammograms, acquired employing AEC using different digital mammography systems (GE, Siemens, and two different models of Hologic), were retrospectively collected."
+MGD,MGD,0,False,PMC12109715,"The potential variation in MGD resulting from different technologies (system and target/filter combination) was assessed employing the Kruskal–Wallis test, followed by Dunn’s post hoc."
+MGD,MGD,0,False,PMC12109715,The trend line of these parameters in addition to the MGD and source-to-breast distance were also plotted and compared.
+MGD,MGD,0,False,PMC12109715,"As the CBT increases, the MGD increases with different degrees, rates, and patterns across systems due to differences in AEC strategies."
+MGD,MGD,0,False,PMC11970336,"Changes in visual function in individuals with meibomian gland dysfunction (MGD), which is commonly associated with evaporative DED, have not been well studied."
+MGD,MGD,0,False,PMC11970336,This study evaluated best-corrected visual acuity (BCVA) and reading speed in individuals with and without MGD.
+MGD,MGD,0,False,PMC11970336,"In a 22-day, prospective, noninterventional, multicenter (three sites) clinical study (NCT01979887), eligible adults (age ≥40 years with no uncontrolled ocular or systemic disease other than MGD) were classified into one of three cohorts (non-MGD, mild/moderate MGD, and severe MGD) based on meibum quality scores, ocular symptom scores, and Schirmer test results."
+MGD,MGD,0,False,PMC11970336,"Mean BCVA was 89.9, 88.3, and 82.7 letters in the non-MGD, mild/moderate MGD, and severe MGD cohorts, respectively (p= 0.046 severe vs mild/moderate MGD; p= 0.094 severe MGD vs non-MGD)."
+MGD,MGD,0,False,PMC11970336,"Mean IReST reading speed was slower in the severe MGD cohort (146.0 words/min) than in the non-MGD (164.2 words/min) and mild/moderate MGD (167.8 words/min) cohorts, and the difference between the mild/moderate and severe MGD cohorts was significant (p= 0.046)."
+MGD,MGD,0,False,PMC12082818,"Patient demographics, preoperative laboratory measurements, and RRs were compared between patients with single-gland disease (SGD) versus multigland disease (MGD)."
+SGD,SGD,0,False,PMC12082818,"Patient demographics, preoperative laboratory measurements, and RRs were compared between patients with single-gland disease (SGD) versus multigland disease (MGD)."
+MGD,MGD,0,False,PMC12082818,"Of 2368 patients included, 1585 (66.9%) patients had SGD, and 783 (33.1%) had MGD."
+SGD,SGD,0,False,PMC12082818,"Of 2368 patients included, 1585 (66.9%) patients had SGD, and 783 (33.1%) had MGD."
+MGD,MGD,0,False,PMC12082818,"Patients with SGD had higher median (IQR) RRs than the MGD group (0.8 [0.5-1.3] vs 0.4 [0.3-0.7], P <.001)."
+MGD,MGD,0,False,PMC12082818,"However, these radiologic studies could be inaccurate in localizing disease or distinguishing between single-gland disease (SGD) and multigland disease (MGD)."
+SGD,SGD,0,False,PMC12082818,"However, these radiologic studies could be inaccurate in localizing disease or distinguishing between single-gland disease (SGD) and multigland disease (MGD)."
+MGD,MGD,0,False,PMC12082818,5 MGD typically presents with smaller lesions that are often difficult to identify on imaging.
+MGD,MGD,0,False,PMC12028022,Objective: This research seeks to investigate the effects of preoperative intense pulsed light with manual meibomian expression (IPL-MGX) on the refractive accuracy of cataract surgery on dry eyes with meibomian gland dysfunction (MGD-related dry eyes).
+MGD,MGD,0,False,PMC12028022,Methods: Fifty-six MGD-related dry eye cases planned for cataract surgery were analyzed.
+MGD,MGD,0,False,PMC12028022,Conclusions: Preoperative IPL-MGX considerably improved the predicted postoperative refraction accuracy in patients with MGD-related dry eye undergoing cataract surgery.
+MGD,MGD,0,False,PMC12028022,These conditions can also be caused by meibomian gland dysfunction (MGD)-related dry eyes [ 15 ].
+MGD,MGD,0,False,PMC12028022,MGD was defined as abnormal meibum composition and secretion [ 19 ].
+MGD,MGD,0,True,PMC12067730,"Dyslipidemia and obesity have been shown to be associated with MGD in adults and obesity mouse model [ 3 , 22 ]."
+MGD,MGD,0,True,PMC11923895,"The therapeutic efficacy of the ROSI‐loaded MN patch (ROSI‐MN) was evaluated in a high‐fat diet (HFD)‐induced MGD mouse model, showing improved outcomes compared to oral administration."
+MGD,MGD,0,True,PMC11700185,We have delineated a mouse model of atrophic meibomian Gland Dysfunction (MGD).
+MGD,MGD,0,True,PMC11367868,"MGD-4 and MGD-28 showed high specificity for tumor cells reflected by the minimal antiproliferative activity against primary B cells isolated from healthy individuals, however, a more relevant humanized mouse model (e.g., CRBN I391V mice) could be utilized to evaluate the toxicity and side effects of our degraders in preclinical studies."
+MGD,MGD,0,True,PMC11698683,"30–32 , 41 In a transgenic mouse model, deficiency in Cyp4f39 , a gene encoding a fatty acid ω-hydroxylase, resulted in decreased levels of C16:1 OAHFAs, cholesteryl OAHFAs, and wax diesters in the meibomian glands, as well as obstruction of the orifices of the meibomian glands, a decrease in tear film breakup time, and corneal epithelial damage indicative of MGD and DED."
+MGD,MGD,0,True,PMC11879417,"As wax esters make up approximately 43 % of the human tear film lipids and they are dysregulated in patients with MGD [ 25 , 26 ], the use of the Awat2 KO mouse model to study EDED is promising."
+MGD,MGD,0,True,PMC11879417,"Importantly, the Awat2 KO mouse described in this study seems to better recapitulate many of the features of moderate to advanced MGD and EDED in humans due to its less severe ocular surface phenotype [ 23 ]."
+MGD,MGD,0,True,PMC11879417,"The Awat2 KO mouse model generally recapitulates the clinical disease seen in human patients with MGD and EDED, but there have been no mutations in Awat2 identified to date that have been associated with MGD/EDED in humans."
+MGD,MGD,0,True,PMC11879417,"Thus, the few phenotypic differences between the Awat2 KO mouse model and humans with MGD and EDED could be unique to this genetic deficiency and the specific responses to the loss of Awat2 ."
+MGD,MGD,0,True,PMC11879417,"However, despite these differences, the Awat2 KO mouse represents a promising model for the human condition as it exemplifies the main clinical features of human patients with MGD and EDED."
+MGD,MGD,0,True,PMC11578149,"As described above, we have devised a novel mouse model of OMGD with robust ductal obstruction and acinar atrophy shortly after genetic deletion of Fgfr2 in Krt5 + MG progenitor cells."
+MGD,MGD,0,True,PMC11578149,This inducible Krt5Fgfr2 CKO - TAM transgenic mouse model of OMGD is readily reversible upon discontinuing TAM induction.
+MGD,MGD,0,True,PMC10851789,This study investigated the effects of UPM on MG dysfunction (MGD) in rodent models.
+MGD,MGD,0,True,PMC10851789,"89 , 90 In addition, the NF-κB and MAPK pathways played an etiological role in inflammatory MGD induced by hyperglycemia 37 and hyperlipidemia in rodent models."
+MGD,MGD,0,True,PMC11696563,"We previously reported that this sclerotic GVHD mouse model mimics MGD and blepharitis with the depletion of MG acini, pathological fibrosis, and infiltration of inflammatory cells, as observed in patients with cGVHD 30 , 31 ."
+MGD,MGD,0,True,PMC10480060,"Overall, the successful establishment of a mouse model of ARMGD phenotype was confirmed."
+MGD,MGD,0,True,PMC10055623,"Many mouse models have also shown that hyperlipidemia is associated with MGD [ 46 , 47 ]."
+MGD,MGD,0,True,PMC10055623,"Previous mouse studies have reported an increased incidence of MGD in mice with altered lipid abnormalities [ 47 , 48 ], but whether this translates to humans needs to be carefully examined."
+MGD,MGD,0,True,PMC10276725,"Although a lot of literature on rodent MGD models exists, a comprehensive review on rabbit animal models is lacking."
+MGD,MGD,0,True,PMC10276725,"They have been successfully used to generate several animal models of MGD like rabbit epinephrine-induced MGD,[ 46 , 47 ] primate polychlorinated biphenyl-induced MGD,[ 46 ] and the rhino mouse genetic MGD models."
+MGD,MGD,1,True,PMC8913530,The Mouse Genome Database (MGD) and the Gene Expression Database (GXD) are MGI’s two major knowledgebases.
+GXD,GXD,1,True,PMC8913530,The Mouse Genome Database (MGD) and the Gene Expression Database (GXD) are MGI’s two major knowledgebases.
+MGD,MGD,1,True,PMC11201772,"A comprehensive list of oncogenes and tumor suppressor genes was obtained by querying the Mouse Genome Database (MGD) [57], which collects data on mouse genes, their functions, phenotypes and mouse models of human disease."
+MGD,MGD,1,True,PMC165494,"The Mouse Genome Database (MGD) (http://www.informatics.jax.org) one component of a community database resource for the laboratory mouse, a key model organism for interpreting the human genome and for understanding human biology."
+MGD,MGD,1,True,PMC165494,"MGD strives to provide an extensively integrated information resource with experimental details annotated from both literature and on-line genomic data sources."
+MGD,MGD,1,True,PMC165494,"MGD curates and presents the consensus representation of genotype (sequence) to phenotype information including highly detailed information about genes and gene products."
+MGD,MGD,1,True,PMC165494,"MGD collaborates with other bioinformatics groups to curate a definitive set of information about the laboratory mouse."
+MGD,MGD,1,True,PMC165494,"MGD contains information on mouse genes, genetic markers and genomic features as well as information on molecular segments (probes, primers, cDNA clones, BACs and YACs) mutant phenotypes, comparative mapping data, graphical displays of linkage, cytogenetic and physical maps, experimental mapping data, as well as strain distribution patterns for recombinant inbred strains (RIs) and cross haplotypes"
+MGD,MGD,1,True,PMC1869007,"These lists were originally extracted from the corresponding organism specific databases, Saccharomyces Genome Database (SGD) [13] and Mouse Genome Database (MGD) [14]."
+SGD,SGD,1,True,PMC1869007,"These lists were originally extracted from the corresponding organism specific databases, Saccharomyces Genome Database (SGD) [13] and Mouse Genome Database (MGD) [14]."
+MGD,MGD,1,True,PMC1160196,"We use the MGD human homologues information to interconvert mouse and human gene names. We maintain local copies of these conversion tables because nearly all queries require that gene nomenclature problems be solved."

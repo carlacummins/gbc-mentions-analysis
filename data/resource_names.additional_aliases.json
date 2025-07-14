@@ -1,0 +1,12 @@
+{
+    "UniProt": ["Swiss-Prot"],
+    "ENA": [
+        "NCBI",
+        "GenBank", "GCA",
+        "SRA", "Sequence Read Archive", "European Read Archive",
+        "International Nucleotide Sequence Database Collaboration",
+        "INSDC"
+    ],
+    "NCT": ["ClinicalTrials.gov"],
+    "GOC": ["GO", "Gene Ontology"]
+}

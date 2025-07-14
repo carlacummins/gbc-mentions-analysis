@@ -1,0 +1,39 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+Ensembl,Ensembl,0,True,PMC11911402,"Local outlier factor (LOF) analysis can help in identifying rare or anomalous MEFV innate immunity regulator, pyrin (MEFV ) ,variants that deviate from the norm, whereas ensemble machine learning algorithms can provide a robust and accurate predictive model by combining the strengths of multiple learning algorithms 11 ."
+Ensembl,Ensembl,0,True,PMC11911402,"Ensemble machine learning algorithms, by employing these techniques, can effectively address the challenges of balancing bias and variance 15 , 16 ."
+Ensembl,Ensembl,0,True,PMC11889634,"Using more advanced ensemble strategies, such as machine learning or deep learning, might be superior to the heuristic intersection workflow we adopted and help to enlarge the number of SVs in the benchmark set, which is worth to be experimented."
+Ensembl,Ensembl,0,True,PMC11176709,"Molecular Twin) implementing an ensemble of variable ML algorithms to accurately predict disease survival using genomic, transcriptomic, proteomic, and lipid data from adenocarcinoma patients [ 6 ]."
+Ensembl,Ensembl,0,True,PMC11911402,"Studies have shown that even the best scoring systems for rare variant detection, such as Rare Exome Variant Ensemble Learner (REVEL), fail to provide the desired predictions for variants in this gene."
+Ensembl,Ensembl,1,True,PMC12098945,The Ensembl Plants database ( Bolser et al.
+Ensembl,Ensembl,1,True,PMC11909976,We utilized the custom annotations feature provided by the ensembl variant effect predictor (VEP) [ 25 ] to annotate the gnomAD chromosome reference VCF files for functional consequences in the sORF reading frame.
+Ensembl,Ensembl,1,True,PMC11909976,Ensembl Variant Effect Predictor
+Ensembl,Ensembl,1,True,PMC11889634,77 https://github.com/Ensembl/ensembl-vep Truvari (v4.0.0) English et al.
+Ensembl,Ensembl,1,True,PMC11889634,VEP (v112.0) McLaren et al. 77 https://github.com/Ensembl/ensembl-vep
+Ensembl,Ensembl,1,True,PMC12023579,"PVT1 is related to the regulation of tumors, including colorectal [ 26 ], gallbladder [ 27 ], and ovarian cancers [ 28 ]; however, the function of the PVT1-214 transcript (Ensembl ID: ENST00000522875) has rarely been reported."
+Ensembl,Ensembl,1,True,PMC10927551,GCA_900186335.2 ) and Ensembl 70 (release 93; https://www.ensembl.org/Eptatretus_burgeri/ ).
+Ensembl,Ensembl,1,True,PMC10927551,Hagfish Hox sequences were obtained from a previous study 19 and used as queries in TBLASTN (v.2.10.1+) to find the location in the Hi-C assembly and Ensembl annotation.
+Ensembl,Ensembl,1,True,PMC12087278,"Mutation tolerance was predicted using MutationTaster (GRCh37/Ensembl 69, accessed June 14 2024), SIFT (accessed June 14 2024) and PolyPhen2 (accessed June 14, 2024), while ensemble measures of pathogenicity were estimated using CADD+ (GRCh38, v1.4) and REVEL scores (GRCh38, v1.3)."
+Ensembl,Ensembl,1,True,PMC11318313,GO terms were downloaded for each species from Ensembl Plants.
+Ensembl,Ensembl,1,True,PMC10960062,The IDs of proteins and mRNAs were unified by Ensembl ID.
+Ensembl,Ensembl,1,True,PMC10960062,"With Scaffold DIA (Proteome Software Inc., Portland, OR, USA), the spectral library was built by searching MS data in the library against the mouse Ensembl release 97 database."
+Ensembl,Ensembl,1,True,PMC11978586,"Arrows indicate the two contrasted isoforms identified by Ensembl transcript IDs, with the upward arrow for the “switched-up” isoform (ENSMUST00000047664.16) featuring a shorter open reading frame (ORF) with the absence of intrinsically disordered regions (IDRs), and the downward arrow for the “switched-down” isoform (ENSMUST00000159747.9) preserving a longer ORF with IDRs."
+Ensembl,Ensembl,1,True,PMC11992669,"The ncRNA dataset was retrieved from Ensembl build 75, which was previously used in the published study [ 8 ] that identified hundreds of non-canonical ORFs using ribosome profiling and mass-spectrometry."
+Ensembl,Ensembl,1,True,PMC12098945,"A pipeline used data on 16 grass full genomes from Ensembl Plants to generate 13 312 highly conserved, universal groups of grass protein-coding genes."
+Ensembl,Ensembl,1,True,PMC12098945,Numbers of fully sequenced genomes from Ensembl Plants release 56 used and not used in the pipeline and from NCBI for validation are shown for each taxon.
+Ensembl,Ensembl,1,True,PMC12098945,"Ensembl, Phytozome) group genes by evolutionary relationships, i.e."
+Ensembl,Ensembl,1,True,PMC12098945,"2016 ) release 56 ( https://feb2023-plants.ensembl.org/ ), which was used as the source of sequence and ortholog information, has fully sequenced genomes of grasses in four of the main taxa of core grasses ( Fig."
+Ensembl,Ensembl,1,True,PMC11911402,"We extracted 12,017 human MEFV gene variants from the Ensembl database."
+Ensembl,Ensembl,1,True,PMC11911402,"Ensembl is an open-source bioinformatics project designed to organize biological data systematically, focusing on the sequences of large-scale genomes."
+Ensembl,Ensembl,1,True,PMC11541074,"Gene annotation of this assembly on Ensembl identified 23,728 protein-coding genes."
+Ensembl,Ensembl,1,True,PMC11541074,The Alnus glutinosa genome assembly (GCA_958979055.1) was annotated at the European Bioinformatics Institute (EBI) on Ensembl Rapid Release.
+Ensembl,Ensembl,1,True,PMC11541074,"The resulting annotation includes 36,650 transcribed mRNAs from 23,728 protein-coding and 4,860 non-coding genes ( Table 2 ; https://rapid.ensembl.org/Alnus_glutinosa_GCA_958979055.1/Info/Index )."
+Ensembl,Ensembl,1,True,PMC11541074,The Ensembl Genebuild annotation system ( Aken et al.
+Ensembl,Ensembl,1,True,PMC11541074,", 2016 ) was used to generate annotation for the Alnus glutinosa assembly (GCA_958979055.1) in Ensembl Rapid Release at the EBI."
+Ensembl,Ensembl,1,True,PMC11541337,"The β-defensin 2 (MZ198754) from seabass was used for BLASTp in Genomicus and allowed us to find an orthologous gene in gilthead seabream genome, defb2 gene (ENSSAUG00010026539, Ensembl (Barroso et al."
+Ensembl,Ensembl,1,True,PMC11541337,The gene information and structure were retrieved from Ensembl Gene .
+Ensembl,Ensembl,1,True,PMC11541337,"Table 1 Accession numbers of defb genes, mRNAs, proteins, and primers in gilthead seabream (Ensembl, NCBI) β-Defensin name Gene mRNA Protein Primer defb1 ENSSAUG00010014090 ENSSAUT00010034981 (FM158209, NCBI) ENSSAUP00010033200 F-CCCCAGTCTGAGTGGAGTGT R-AATGAGACACGCAGCACAAG defb2 ENSSAUG00010026539 ENSSAUT00010069764 ENSSAUP00010066624 F-TTCTCCTGATGCTCGCAGTC R-ACCGTGATGACCAACGATGT"
+Ensembl,Ensembl,1,True,PMC11541337,"Accession numbers of defb genes, mRNAs, proteins, and primers in gilthead seabream (Ensembl, NCBI)"
+Ensembl,Ensembl,1,True,PMC11541337,This used 129 fish genomes from a common ancestor Actinopterygii (~ 386 Mya) and low-coverage genomes were removed; these assembly genomes can be found in Ensembl .
+Ensembl,Ensembl,1,True,PMC11909976,"Using Ensembl [ 22 ] Release 113, phenotype associations were identified for 30 genes."
+Ensembl,Ensembl,1,True,PMC11909976,Further analysis of Ensembl Release 113 revealed Gene Ontology (GO) terms for 99 genes.
+Ensembl,Ensembl,1,True,PMC11909976,For the genes we obtained the coding blocks from the most recent Ensembl Release GTF file.

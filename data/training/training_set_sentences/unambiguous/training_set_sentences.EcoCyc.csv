@@ -1,0 +1,41 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+EcoCyc,EcoCyc,0,True,PMC11551758,"Approximately half of the previously categorized y-ome genes are now categorized as Partially characterized, leaving 15.5% (738) as Uncharacterized genes in EcoCyc."
+EcoCyc,EcoCyc,0,True,PMC11551758,"This new categorization scheme is searchable in the EcoCyc database, will be updated as new experimental evidence is curated and provides important information for research decisions."
+EcoCyc,EcoCyc,0,True,PMC11551758,This naming system was adopted by EcoCyc ( 3 ) and has been used by many researchers to indicate genes of unknown function [see e.g.
+EcoCyc,EcoCyc,0,True,PMC12075040,"Using the EcoCyc database, we previously established that the architecture of this biological network fits within the paradigm of reservoir computing (Gabalda-Sagarra et al."
+EcoCyc,EcoCyc,0,True,PMC12075040,"At the same time, the elements of W are real random numbers drawn from a uniform distribution \documentclass[12pt]{minimal} 				\usepackage{amsmath} 				\usepackage{wasysym}  				\usepackage{amsfonts}  				\usepackage{amssymb}  				\usepackage{amsbsy} 				\usepackage{mathrsfs} 				\usepackage{upgreek} 				\setlength{\oddsidemargin}{-69pt} 				\begin{document}$$\mathcal {U}$$\end{document} U (0,1) if the link exists (i.e., if a protein and its corresponding target gene are connected in the EcoCyc database), and 0 otherwise."
+EcoCyc,EcoCyc,0,True,PMC12075040,The Ecocyc dataset (Keseler et al.
+EcoCyc,EcoCyc,0,True,PMC11537011,Protein functions and accession number (EcoCyc ID) were taken from the EcoCyc database ( 43 ).
+EcoCyc,EcoCyc,0,True,PMC11537011,EcoCyc accession number and function obtained from the EcoCyc database ( 43 ).
+EcoCyc,EcoCyc,0,True,PMC11537011,Spot ID Reg. factor Protein (EcoCyc ID) Function MIC µg/mL
+EcoCyc,EcoCyc,0,True,PMC11537011,Spot ID Regulation factor ± range Protein EcoCyc accession number Function Theoretical MW [Da] Theoretical pI Peptides Fragments Coverage %
+EcoCyc,EcoCyc,0,True,PMC11971657,Metabolic pathway determinations were made using the publicly available Kyoto Encyclopedia of Genes and Genomes (KEGG; www.genome.jp/kegg) and EcoCyc (www.ecocyc.org) databases.
+EcoCyc,EcoCyc,0,True,PMC11092163,"At present, neither GenBank annotation files nor species-specific genome browsers, such as the BsubCyc database [ 32 ], SubtiWiki [ 33 ], AureoWiki [ 34 ], or EcoCyc [ 35 ], are updated with the single-nucleotide resolution transcription data that is publicly available."
+EcoCyc,EcoCyc,0,True,PMC11092163,"Annotation files used for comparison and for transfer of names and features to the pyRAP annotation were obtained from SubtiWiki [ 33 ], EcoCyc [ 35 ], AureoWiki [ 34 ] and GenBank."
+EcoCyc,EcoCyc,0,True,PMC10767902,The PythonCyc library was utilized to extract data from EcoCyc ( 14 ).
+EcoCyc,EcoCyc,0,True,PMC10767902,We used the ECO ontology ( 21 ) as well as the evidence in EcoCyc ( 22 ).
+EcoCyc,EcoCyc,0,True,PMC10767902,"This work was done by our team, with input from interactions with the EcoCyc team."
+EcoCyc,EcoCyc,0,True,PMC11261719,I have checked EcoCyc and it appears that you are correct.
+EcoCyc,EcoCyc,0,True,PMC11136681,"The cofunctional network integrates probabilistic functional links, including shared GO and EcoCyc annotations, which signify molecular, metabolic, and biological process linkages or coregulation among genes and their products."
+EcoCyc,EcoCyc,0,True,PMC11136681,"The distance between these targets in the cofunctional (EcoCyc/GO-BP) network was 2, and in the DDI network the distance between targets was 4."
+EcoCyc,EcoCyc,0,True,PMC11434101,"Gene ontology analyses were conducted on DEGs using the databases PANTHER and EcoCyc [ 60 , 61 ]."
+EcoCyc,EcoCyc,1,True,PMC11551758,"EcoCyc, the most comprehensive, curated genome database for E. coli K-12 substr."
+EcoCyc,EcoCyc,1,True,PMC11551758,"The computational part of their workflow involved keyword analysis of genes from multiple E. coli databases (EcoCyc, EcoGene, UniProt and RegulonDB)."
+EcoCyc,EcoCyc,1,True,PMC12075040,The gene regulatory network of E. coli has been extensively documented and made publicly available in resources such as EcoCyc (Keseler et al.
+EcoCyc,EcoCyc,1,True,PMC11092163,"Comprehensive Rend-seq annotation files supplied from publicly available databases (SubtiWiki [ 33 ], EcoCyc [ 35 ], and AureoWiki [ 34 ]) and NCBI GenBank files for B. subtilis (NC_000964.3) , E. coli (NC_000913.2) and S. aureus (NC_007795.1) are provided in Tables S1–S3."
+EcoCyc,EcoCyc,1,True,PMC11092163,"For each species analysed ( B. subtilis, E. coli, and S. aureus), a single annotation file was made for comparison by pooling the annotations that are available from GenBank with the annotations provided by SubtiWiki, EcoCyc, and AureoWiki , respectively, in order to encompass as many known annotations as possible."
+EcoCyc,EcoCyc,1,True,PMC11092163,"In E. coli , pyRAP finds 117 novel transcripts that are not annotated in either GenBank or the EcoCyc database, and in S. aureus we report 16 novel transcripts that are not found in either GenBank or the AureoWiki database ( Fig."
+EcoCyc,EcoCyc,1,True,PMC10767902,The two most up-to-date databases with manually curated knowledge from the literature of E. coli K-12 are RegulonDB and EcoCyc.
+EcoCyc,EcoCyc,1,True,PMC10767902,EcoCyc is a bioinformatics database that describes the genome and the biochemical machinery of E. coli K-12 MG1655 and the knowledge of transcriptional regulation and operon organization stemming from our curation work.
+EcoCyc,EcoCyc,1,True,PMC11261719,While curating proteins in the EcoCyc database we encountered the following comment in [ 23 ]: ‘Three open reading frames coding for proteins with similarities to NifS have been identified in the E. coli K-12 genome’.
+EcoCyc,EcoCyc,1,True,PMC11261719,Q: According to EcoCyc there is no nifS protein in E. coli .
+EcoCyc,EcoCyc,1,True,PMC11261719,"You are correct that according to EcoCyc, there is no specific NifS protein annotated in Escherichia coli ( E. coli )."
+EcoCyc,EcoCyc,1,True,PMC11261719,Q: According to EcoCyc there is no NifS protein in E. coli .
+EcoCyc,EcoCyc,1,True,PMC11136681,a) Graphical representations of the cofunctional gene pair network of E. coli (EcoliNet: EcoCyc/GO-BP).
+EcoCyc,EcoCyc,1,True,PMC11136681,"S3B, Supplementary Material online), and for the EcoCyc portion of the E. coli cofunctional network ( supplementary fig."
+EcoCyc,EcoCyc,1,True,PMC11136681,"With these rate estimates and interaction patterns, we asked whether network-based metrics are correlated with DDI divergence, by linking a subset of DCs with their respective protein targets in E. coli cofunctional (EcoCyc/GO-BP) and PPI networks."
+EcoCyc,EcoCyc,1,True,PMC10949920,We have been for the last 30 years continuously extracting and gathering in RegulonDB and feeding into EcoCyc knowledge supported by classic molecular biology methods from original scientific publications about regulation of transcription initiation and operon organization in Escherichia coli K-12.
+EcoCyc,EcoCyc,1,True,PMC11481537,"E. coli K12 is a well-studied genome that has some transcript predictions ( 17 , 20 ), anti-sense RNA characterization ( 21 ), and transcriptional start site and terminator predictions ( 17 , 22 – 25 ), all of which are aggregated and manually curated in RegulonDB ( 26 ) and EcoCyc ( 27 )."
+EcoCyc,EcoCyc,1,True,PMC11481537,"E. coli K12 annotation is available for comparison in RegulonDB ( 26 ) and EcoCyc ( 27 ) and includes transcript predictions ( 17 , 20 ), anti-sense RNA characterization ( 21 ), and transcriptional start site and terminator predictions ( 17 , 22 – 25 )."
+EcoCyc,EcoCyc,1,True,PMC10629481,"The ECs inferred by the different tools for E. coli K–12 MG1655 were compared with a reference containing ECs from EcoCyc, KEGG, BiGG, and ModelSEED associated with E. coli K–12 MG1655 ( Supplemental Fig."
+EcoCyc,EcoCyc,1,True,PMC10629481,"We compared the ECs predicted by these methods to the ones contained in a reference EC catalog for E. coli K–12 MG1655 created from four databases (KEGG, EcoCyc, ModelSEED, and BiGG)."

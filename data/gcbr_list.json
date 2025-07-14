@@ -1,0 +1,267 @@
+[
+  {
+    "short_name": "Alliance of Genome Resources",
+    "common_name": null,
+    "full_name": ""
+  },
+  {
+    "short_name": "BacDive",
+    "common_name": "BacDive",
+    "full_name": "Bacterial Diversity Metadatabase"
+  },
+  {
+    "short_name": "BAR",
+    "common_name": null,
+    "full_name": "Bio-Analytic Resource for Plant Biology"
+  },
+  {
+    "short_name": "Bgee",
+    "common_name": "Bgee",
+    "full_name": ""
+  },
+  {
+    "short_name": "BRENDA",
+    "common_name": "BRENDA",
+    "full_name": "BRaunschweig ENzyme DAtabase"
+  },
+  {
+    "short_name": "Catalogue of Life",
+    "common_name": null,
+    "full_name": ""
+  },
+  {
+    "short_name": "CATH",
+    "common_name": "CATH",
+    "full_name": ""
+  },
+  {
+    "short_name": "Cellosaurus",
+    "common_name": null,
+    "full_name": ""
+  },
+  {
+    "short_name": "ChEBI",
+    "common_name": "ChEBI",
+    "full_name": ""
+  },
+  {
+    "short_name": "ChEMBL",
+    "common_name": "ChEMBL",
+    "full_name": ""
+  },
+  {
+    "short_name": "CIViC",
+    "common_name": null,
+    "full_name": "Clinical Interpretation of Variants in Cancer"
+  },
+  {
+    "short_name": "ClinGen",
+    "common_name": null,
+    "full_name": "Clinical Genome Resource"
+  },
+  {
+    "short_name": "DDBJ",
+    "common_name": "DDBJ",
+    "full_name": "DNA Data Bank of Japan"
+  },
+  {
+    "short_name": "EcoCyc",
+    "common_name": "EcoCyc",
+    "full_name": ""
+  },
+  {
+    "short_name": "ENA",
+    "common_name": "ENA",
+    "full_name": "European Nucleotide Archive"
+  },
+  {
+    "short_name": "Ensembl",
+    "common_name": "Ensembl",
+    "full_name": ""
+  },
+  {
+    "short_name": "Europe PMC",
+    "common_name": "Europe PMC",
+    "full_name": ""
+  },
+  {
+    "short_name": "FlyBase",
+    "common_name": "FlyBase",
+    "full_name": ""
+  },
+  {
+    "short_name": "GBIF",
+    "common_name": null,
+    "full_name": "Global Biodiversity Information Facility"
+  },
+  {
+    "short_name": "GENCODE",
+    "common_name": "GENCODE",
+    "full_name": ""
+  },
+  {
+    "short_name": "gnomAD",
+    "common_name": "gnomAD",
+    "full_name": "Genome Aggregation Database"
+  },
+  {
+    "short_name": "GOC",
+    "common_name": "GOC",
+    "full_name": "Gene Ontology consortium"
+  },
+  {
+    "short_name": "GSA",
+    "common_name": "GSA",
+    "full_name": "Genome Sequence Archive"
+  },
+  {
+    "short_name": "GWAS Catalog",
+    "common_name": "",
+    "full_name": ""
+  },
+  {
+    "short_name": "GXD",
+    "common_name": "GXD",
+    "full_name": "Gene Expression Database"
+  },
+  {
+    "short_name": "HGNC",
+    "common_name": "HGNC",
+    "full_name": "HUGO Gene Nomenclature Committee"
+  },
+  {
+    "short_name": "HPA",
+    "common_name": null,
+    "full_name": "Human Protein Atlas"
+  },
+  {
+    "short_name": "Human Disease Ontology",
+    "common_name": "",
+    "full_name": "Human Disease Ontology Knowledgebase"
+  },
+  {
+    "short_name": "IMEx",
+    "common_name": null,
+    "full_name": "International Molecular Exchange Consortium"
+  },
+  {
+    "short_name": "InterPro",
+    "common_name": "InterPro",
+    "full_name": ""
+  },
+  {
+    "short_name": "IUPHAR-DB",
+    "common_name": "IUPHAR-DB",
+    "full_name": "BPS/IUPHAR Guide to PHARMACOLOGY"
+  },
+  {
+    "short_name": "LIPID MAPS",
+    "common_name": null,
+    "full_name": ""
+  },
+  {
+    "short_name": "LPSN",
+    "common_name": "LPSN",
+    "full_name": "List of Prokaryotic Names with Standing in Nomenclature"
+  },
+  {
+    "short_name": "MGD",
+    "common_name": "MGD",
+    "full_name": "Mouse Genome Database"
+  },
+  {
+    "short_name": "Orphadata Science",
+    "common_name": null,
+    "full_name": ""
+  },
+  {
+    "short_name": "PANTHER",
+    "common_name": "PANTHER",
+    "full_name": "Protein Analysis Through Evolutionary Relationships"
+  },
+  {
+    "short_name": "PDB",
+    "common_name": "PDB",
+    "full_name": "Worldwide Protein Data Bank organization"
+  },
+  {
+    "short_name": "PharmGKB",
+    "common_name": "PharmGKB",
+    "full_name": "Pharmacogenomics Knowledgebase"
+  },
+  {
+    "short_name": "Planteome",
+    "common_name": null,
+    "full_name": ""
+  },
+  {
+    "short_name": "PomBase",
+    "common_name": "PomBase",
+    "full_name": ""
+  },
+  {
+    "short_name": "ProteomeXchange",
+    "common_name": null,
+    "full_name": ""
+  },
+  {
+    "short_name": "Reactome",
+    "common_name": "Reactome",
+    "full_name": ""
+  },
+  {
+    "short_name": "RGD",
+    "common_name": "RGD",
+    "full_name": "Rat Genome Database"
+  },
+  {
+    "short_name": "Rhea",
+    "common_name": "Rhea",
+    "full_name": ""
+  },
+  {
+    "short_name": "SGD",
+    "common_name": "SGD",
+    "full_name": "Saccharomyces Genome Database"
+  },
+  {
+    "short_name": "SILVA",
+    "common_name": "SILVA",
+    "full_name": ""
+  },
+  {
+    "short_name": "STRING",
+    "common_name": "STRING",
+    "full_name": ""
+  },
+  {
+    "short_name": "UCSC Genome Browser",
+    "common_name": "UCSC Genome Browser",
+    "full_name": "UCSC Genome Browser"
+  },
+  {
+    "short_name": "UniProt",
+    "common_name": "UniProt",
+    "full_name": ""
+  },
+  {
+    "short_name": "UniProtKB",
+    "common_name": "UniProtKB",
+    "full_name": "Universal Protein Resource"
+  },
+  {
+    "short_name": "VEuPathDB",
+    "common_name": "VEuPathDB",
+    "full_name": "Eukaryotic Pathogen, Vector and Host Informatics Resource"
+  },
+  {
+    "short_name": "WormBase",
+    "common_name": "WormBase",
+    "full_name": ""
+  },
+  {
+    "short_name": "ZFIN",
+    "common_name": "ZFIN",
+    "full_name": "Zebrafish Model Organism Database"
+  }
+]

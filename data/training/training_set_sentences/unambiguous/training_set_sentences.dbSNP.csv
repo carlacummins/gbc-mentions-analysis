@@ -1,0 +1,41 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+dbSNP,dbSNP,0,True,PMC11842050,"To further understand the fine-tuning performance, we also fine-tuned the model to predict individual fields such as gene, condition, and dbSNP ID, using chromosome: position as input."
+dbSNP,dbSNP,0,True,PMC11842050,"We designed our csv file with five columns: chromosome: position, dbSNP ID, gene, condition, and all other annotations."
+dbSNP,dbSNP,0,True,PMC11148240,ClinVar and dbSNP will provide access to the gene ID and corresponding link to ClinVar and dbSNP databases.
+dbSNP,dbSNP,0,True,PMC11855689,"The hg38 reference genome, index files, interval lists, and human dbSNP data are retrieved from the GATK [ 31 ] resource bundle ( https://gatk.broadinstitute.org/hc/en-us/articles/360035890811-Resource-bundle (accessed on 12 February 2025))."
+dbSNP,dbSNP,0,True,PMC11855689,"After alignment, duplicate fragments are marked, reads spanning splice junctions are split, and base quality scores are recalibrated using the dbSNP database, resulting in an analysis-ready BAM file."
+dbSNP,dbSNP,0,True,PMC10770757,"Position (hg38) dbSNP Reference Alteration Amino acid change Allele frequency in 1000Gp3_EAS FATHMM prediction 9997252 rs583903 C T p.Gly64Asp 1 tolerated 9998362 rs2273987 G A p.Ser28Phe 0.170634921 tolerated 9998375 rs2273986 A G p.Ser24Pro 0.336309524 tolerated 9999043 rs612593 T C p.Ile20Val 1 tolerated FATHMM, functional analysis through hidden Markov models."
+dbSNP,dbSNP,0,True,PMC10770757,Position (hg38) dbSNP Reference Alteration Amino acid change Allele frequency in 1000Gp3_EAS FATHMM prediction
+dbSNP,dbSNP,0,True,PMC10381612,dbSNP ID Substitution PRO SIFT Score POLY Score SNAP 2 Score MA Score PANTHER PON-P2 Score PMUT Score
+dbSNP,dbSNP,0,True,PMC11933015,"The MAF annotations were based on the 1000 Genomes (1000G), dbSNP, ESP, ExAC, and Chigene inhouse MAF databases, while Provean, Sift, Polypen2_hdiv, and Polypen2_hvar databases were used for further annotations using R software (R Foundation for Statistical Computing, Vienna, Austria)."
+dbSNP,dbSNP,0,True,PMC11050077,The reported allele frequencies in dbSNP are T = 0.1947 in Africans and T = 0.00042 in Europeans.
+dbSNP,dbSNP,0,True,PMC9238410,"TGF-β2 rs10495098 SNV G>A,T 1:218342968 T=0.4585/2296 no data available in the dbSNP NCBI"
+dbSNP,dbSNP,0,True,PMC9238410,rs10863399 SNV A>C 1:218453334 C=0.2073/1038 no data available in the dbSNP NCBI
+dbSNP,dbSNP,0,True,PMC8356430,"ESRRG estrogen-related receptor gamma, MAF minor allele frequency of East Asian group in dbSNP, TWB minor allele frequency in the Taiwan Biobank"
+dbSNP,dbSNP,0,True,PMC8356430,"According to the dbSNP and Taiwan Biobank database, the frequency of the T allele was 0.022 (4,500 samples) in the East Asian population and 0.003 in Taiwanese population, respectively."
+dbSNP,dbSNP,0,True,PMC8356430,"CUX1 cut like homeobox 1, CDH18 cadherin 18, NOL3 nucleolar protein 3, PRAP1 proline rich acidic protein 1, NRAP nebulin related anchoring protein; minor allele frequency of the East Asian group in dbSNP, TWB Minor allele frequency in the Taiwan Biobank"
+dbSNP,dbSNP,0,True,PMC8356430,Minor allele Frequency of East Asian group in dbSNP
+dbSNP,dbSNP,0,True,PMC6895915,"4 c.2622 + 1G > A. dbSNP: rs398123901 DMD-1890 Still ambulant at 8 yr, hyperCKemia, dystrophic changes in muscle biopsy with dystrophin absence by immunoanalysis. PRESENT Carrier mother and affected hemizygous brother."
+dbSNP,dbSNP,0,True,PMC6895915,"7 c.2281_2285del or p.(Glu761Serfs * 10). dbSNP: rs398123881 DMD-1789 DMD phenotype, hyperCKemia, dystrophic changes in muscle biopsy with dystrophin absence by immunoanalysis. ABSENT Non-carrier mother"
+dbSNP,dbSNP,0,True,PMC6895915,"8 c.6128_6131del or p.(Asp2043Valfs * 29). dbSNP: rs863225006 DMD-1837 Still ambulant at 11 yr, hyperCKemia. PRESENT Carrier mother"
+dbSNP,dbSNP,0,True,PMC6895915,"10 c.9204_9207del or p.(Asn3068Lysfs * 20). dbSNP: rs863225015 DMD-1777 DMD phenotype, hyperCKemia, MP-EMG. ABSENT Carrier mother"
+dbSNP,dbSNP,1,True,PMC12086521,"Non‐pathogenic missense and nonsense mutations were curated from dbSNP (Sherry et al., 2001 )."
+dbSNP,dbSNP,1,True,PMC12086521,The HI‐union‐SI consists of 8263 dbSNP and 445 ClinVar missense mutations and 165 dbSNP and 277 ClinVar nonsense mutations.
+dbSNP,dbSNP,1,True,PMC12086521,The IntAct‐SI comprises 23320 dbSNP and 1363 ClinVar missense mutations and 421 dbSNP and 1434 ClinVar nonsense mutations.
+dbSNP,dbSNP,1,True,PMC12086521,"To elucidate disparities in the functional consequences of non‐pathogenic and Mendelian disease‐causing mutations, we compared the fractions of quasi‐null and nonsense mutations among the dbSNP and ClinVar datasets."
+dbSNP,dbSNP,1,True,PMC12086521,"In the HI‐union‐SI, 2.0% of dbSNP and 38.4% of ClinVar nonsynonymous mutations are nonsense (Figure 5b )."
+dbSNP,dbSNP,1,True,PMC12106698,"Partial dependence plots showed membership in the COSMIC database, absence from the dbSNP common variants database, and increasing read depth increased mean probability of high confidence somatic variant prediction in both models."
+dbSNP,dbSNP,1,True,PMC12106698,Rule-based filtering also often involves discarding variants reported in population databases including the 1000 Genomes Project 9 and dbSNP 10 .
+dbSNP,dbSNP,1,True,PMC12106698,SnpSift v4.3 t 30 was used to annotate coding variants reported in COSMIC v98 and common variants in dbSNP v151.
+dbSNP,dbSNP,1,True,PMC12106698,"These variants were defined as merged tissue variants with read depth greater than 70 for low depth data (or greater than 500 for high depth data), with Phred quality scores > = 50, not reported in the common variants dbSNP v151 VCF file and reported in the COSMIC v98 coding mutations VCF."
+dbSNP,dbSNP,1,True,PMC12106698,"VCF features included a Boolean of presence of the variant in each of dbSNP and COSMIC databases, and bcftools, FreeBayes, LoFreq, and Mutect2 VCF files."
+dbSNP,dbSNP,1,True,PMC11842050,"To construct training and validation prompts in jsonl format, we first extracted 13 informative annotation fields (chromosome, position, reference allele, alternative allele, dbSNP ID, Variation ID, Allele ID, canonical SPDI, molecular consequence, germline review, germline status, gene, condition) for each variant using bcftools (v.1.20) ( Danecek et al."
+dbSNP,dbSNP,1,True,PMC11842050,The users question involves querying the full annotations of a variant by providing either the chromosome and position or the dbSNP ID as input (see Supplementary Table S1 for command and prompt details).
+dbSNP,dbSNP,1,True,PMC11842050,"This format ensures that chromosome position, dbSNP ID, gene, and condition of variants are searchable."
+dbSNP,dbSNP,1,True,PMC11148240,"Furthermore, we annotated the frequency of the mutation and associated phenotypes using the dbSNP (RRID:SCR_002338) ( 27 ) and ClinVar (RRID:SCR_006169) database ( 28 )."
+dbSNP,dbSNP,1,True,PMC11148240,"A total of 542,442 mutations in MONET were recorded in the dbSNP database, which contains human variants including small indels original from germline or somatic mutations."
+dbSNP,dbSNP,1,True,PMC11148240,"While most of the variant recorded in dbSNP and ClinVar are of germline origin, 198 somatic mutations in MONET have been recorded in ClinVar."
+dbSNP,dbSNP,1,True,PMC11148240,"Mutations in dbSNP 542,442"
+dbSNP,dbSNP,1,True,PMC11855689,"Base quality recalibration is then carried out using baserecalibrator from GATK v4.3.0.0, generating a recalibration report, using the default setting for covariates and dbSNP build 138 [ 37 ] as a variant database for known sites."
+dbSNP,dbSNP,1,True,PMC11377869,Variant or deletion Nucleotide shift Type of variant dbSNP Domain Minor Allele frequency Functional studies ACMG classification Reference
+dbSNP,dbSNP,1,True,PMC10706286,"False results could lead to the inaccurate annotation of genetic variants in dbSNP and ClinVar databases, tools on which HGMD and Ensembl rely, finally resulting in incorrect genetic variants interpretation."

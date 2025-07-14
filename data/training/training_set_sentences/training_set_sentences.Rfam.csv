@@ -1,0 +1,42 @@
+resource_name,matched_alias,label,article_topic_match,pmcid,paragraph_text
+Rfam,Rfam,0,True,PMC10989896,"In total protein-coding genes, 13,788 of them were found to relate with the CYP superfamily, while only 2,659 genes were searched after controlling E -value less than 1e −5 ( Supplementary Table 4 ), and 1,733 protein-coding genes were annotated as transporter proteins in the TCDB ( Supplementary Table 5 )."
+Rfam,Rfam,0,True,PMC11933835,(b) Active TEs of eight superfamilies in 119 species.
+Rfam,Rfam,0,True,PMC11933835,"The heatmap shows the active TE copies of the eight superfamilies (Copia, Gypsy, hAT, CACTA, PIF‐Harbinger, Mutator, Tc1_Mariner and Helitron) from the innermost to the outermost layers."
+Rfam,Rfam,0,True,PMC11933835,(c) Active TEs of eight superfamilies in seven crop populations.
+Rfam,Rfam,0,True,PMC11933835,"Among the six Class II TE superfamilies, Helitron demonstrate the highest level of activity."
+Rfam,Rfam,0,True,PMC11933835,"Among the two Class I TE superfamilies, the Gypsy superfamily shows higher activity compared to the Copia superfamily."
+Rfam,Rfam,1,True,PMC10053595,3.3.2 [ 38 ] and to the Rfam database ver.
+Rfam,Rfam,1,True,PMC10053595,"Transcripts lacking coding potential according to the results of three of the five cited programs (CPAT score < 0.78; CPC2 score < 0; Feelnc score < 0.558; CNCI and PLEK index = “noncoding”), with low similarity to protein domains in the Pfam database (e-value > 10 −3 ) and lacking alignments to the Rfam database records, were referred to in the subsequent analysis stages."
+Rfam,Rfam,1,True,PMC10968306,"Including the cis-regulatory element not only serves as a counterpoint against other gene classes in Rfam’s hierarchy [ 40 ] but also enables baseline benchmarking, validating our model’s efficacy."
+Rfam,Rfam,1,True,PMC10968306,"The ’cmfetch’ function retrieves covariance models from the complete Rfam database, and ’cmsearch’ matches these models against a genome."
+Rfam,Rfam,1,True,PMC10968306,We accessed the Rfam Public MySQL Database (version 14.9) to obtain RNA type-associated family lists [ 54 ].
+Rfam,Rfam,1,True,PMC10968306,"Four CM files were generated using the complete Rfam covariance model (CM) and these lists using cmfetch, with one file dedicated to each RNA type."
+Rfam,Rfam,1,True,PMC10968306,We utilized cmsearch with the Rfam curators’ selected gathering cut-off (GA) value [ 55 ] for sequence extraction of RNA types from a given genome.
+Rfam,Rfam,1,True,PMC10989896,"Noncoding RNA predictions were conducted using tRNAscan-SE v1.3.1 ( http://lowelab.ucsc.edu/tRNAscan-SE/ ) to predict tRNAs and RNAmmer v1.2 ( https://services.healthtech.dtu.dk/services/RNAmmer-1.2/ ) to predict rRNAs, and the rest of noncoding RNA predictions were predicted in Rfam database ( https://rfam.org/ )."
+Rfam,Rfam,1,True,PMC11395258,"This analysis involved mapping the lncRNAs to the Rfam database based on conserved sequences and secondary structures, following the approach outlined by Nawrocki et al."
+Rfam,Rfam,1,True,PMC11528002,Gene prediction was performed with Prokka v1.14.15 26 and the following parameters were used for genome assembly annotation: --compliant --genus [Genus] --usegenus --rfam --evalue 0.0001.
+Rfam,Rfam,1,True,PMC11701678,"This paper introduces major improvements, including the expansion of Rfamseq to 26 106 genomes, a 76% increase, incorporating the latest UniProt reference proteomes and additional viral genomes."
+UniProt,UniProt,1,True,PMC11701678,"This paper introduces major improvements, including the expansion of Rfamseq to 26 106 genomes, a 76% increase, incorporating the latest UniProt reference proteomes and additional viral genomes."
+Rfam,Rfam,1,True,PMC11701678,Rfam is freely available at https://rfam.org .
+Rfam,Rfam,1,True,PMC11701678,"The Rfam database, a widely used repository of non-coding RNA families, has undergone significant updates in release 15.0."
+Rfam,Rfam,1,True,PMC11701678,"These updates significantly expand Rfam’s coverage and improve annotation quality, reinforcing its critical role in RNA research, genome annotation and the development of machine learning models."
+Rfam,Rfam,1,True,PMC11701678,The Rfam database was established in 2002 ( 1 ) in order to provide a central repository of non-coding RNA (ncRNA) families for genomic annotations.
+Rfam,Rfam,1,True,PMC11915505,"With this new information, we have produced new covariance models (CMs), two of which are available at the Rfam database [ 14 ], and demonstrated their utility for tmRNA gene search."
+Rfam,Rfam,1,True,PMC11915505,"Three automated tmRNA-finding tools were applied to batches of genomes: (i) Aragorn v. 1.2.40 [ 22 ], (ii) five tmRNA CMs from Rfam [ 14 ] (RF00023, RF01849, RF01850, RF01851, and RF02544), applied using Infernal v. 1.1.2 [ 23 ], and (iii) BLASTN [ 24 ] against the then-current version of our tmRNA database, as managed by our software Rfind [ 25 ]."
+Rfam,Rfam,1,True,PMC11915505,"After the latest major update batch, an additional phase of tmRNA finding was undertaken for bacterial taxa with low tmRNA gene yields, choosing candidates based on Rfam data (in the above work, candidates had been selected based on Aragorn or BLASTN data only)."
+Rfam,Rfam,1,True,PMC11915505,"For each of the 4590 genomes in these taxa where tmRNA had not yet been identified, a single top candidate tmRNA sequence was taken based on the best Rfam hit for the genome."
+Rfam,Rfam,1,True,PMC11915505,We took advantage of the diversity of new tmRNA genes discovered in this work to update the Rfam tmRNA CMs.
+Rfam,Rfam,1,True,PMC12068338,"We used GeneMarkS v4.32 [ 21 ] to predict the coding sequences and tRNAscan-SE, Barrnap v0.9, and Rfam to identify transfer RNA, ribosomal RNA, and other non-coding RNA, respectively [ 22 , 23 ]."
+Rfam,Rfam,1,True,PMC4371300,"In its most recent release, Rfam has discarded its BLAST filters."
+Rfam,Rfam,1,True,PMC4371300,Eric was looking for Rfam families with the biggest increase in number of putative detected homologs.
+Rfam,Rfam,1,True,PMC5870858,These benchmarks are named the Rfam-ome and Rfam-cliques datasets.
+Rfam,Rfam,1,True,PMC5870858,All benchmark sets were derived from the Rfam database ( Nawrocki et al.
+Rfam,Rfam,1,True,PMC5870858,Here a subalignment is considered to be a subset of an Rfam seed alignment.
+Rfam,Rfam,1,True,PMC5870858,"For each species other than human, exact matches of the organism’s sequences contained in the input Rfam seed alignment are searched in the regions orthologous to the human neighborhood."
+Rfam,Rfam,1,True,PMC5870858,Collecting the subalignments for all Rfam families yields the complete dataset named Rfam-ome .
+Rfam,Rfam,1,True,PMC6461891,"natans , L. vacuolata , L. oceanica , and A. amoebiformis against the Rfam CM database ( Nawrocki and Eddy 2013 ; Kalvari et al."
+Rfam,Rfam,1,True,PMC9756865,Then we calculated a confusion matrix for this prediction with the Rfam secondary structure annotation taken as the ground truth and used the confusion matrix to plot the precision–recall curve.
+Rfam,Rfam,1,True,PMC9756865,"t-SNE clusters of embeddings of RNA sequences created by PredPair tend to contain embeddings from particular Rfam families, supporting the predictions of PredPair being in line with biological classification."
+Rfam,Rfam,1,True,PMC9756865,"We used RNA sequences from seed alignments of 2,147 Rfam families ( Kalvari et al., 2018 )."
+Rfam,Rfam,1,True,PMC9756865,"The split on train, validation, and test was performed in so that all members of one Rfam family were assigned to one set."
+Rfam,Rfam,1,True,PMC9756865,The same procedure with the Rfam secondary structure annotation as the ground truth was used to obtain the precision-recall curve for PredPair and SPOT-RNA predictions.
