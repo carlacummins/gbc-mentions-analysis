@@ -10,6 +10,7 @@ parser = argparse.ArgumentParser(description="Query Europe PMC for resource ment
 parser.add_argument('--outdir', type=str, required=True, help='Output directory for results')
 parser.add_argument('--resources', type=str, required=True, help='JSON file containing resource names and aliases')
 parser.add_argument('--chunks', type=int, default=1, help='Number of chunks to split the work into')
+parser.add_argument('--epmc_limit', type=int, default=0, help='Limit for the number of results to fetch from Europe PMC')
 
 args = parser.parse_args()
 
@@ -21,7 +22,7 @@ for r in resource_aliases:
     ras = list(set(r))
     epmc_query = f"(SRC:PMC) AND ({" OR ".join([f'"{alias}"' for alias in ras if alias])})"  # Join aliases with OR for EPMC query
     print(f"Searching Europe PMC for: {epmc_query}")
-    results = epmc_search(epmc_query, result_type='core')
+    results = epmc_search(epmc_query, result_type='core', limit=args.epmc_limit)
 
     for article in results:
         this_pmcid = article.get('pmcid')
