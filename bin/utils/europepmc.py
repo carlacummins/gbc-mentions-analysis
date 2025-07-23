@@ -4,11 +4,14 @@ import sys
 import os
 import re
 import glob
+import gzip
+import shutil
 
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
+from lxml import etree
 
 retry_strategy = Retry(
     total=5,                      # Try up to 5 times
@@ -84,37 +87,88 @@ def epmc_search(query, result_type='core', limit=0, cursor=None, returncursor=Fa
 
     return (all_results, cursor) if returncursor else all_results
 
+def _extract_article_from_combined_xml(xml_content, pmcid):
+    """
+    Given a combined XML content, extract the article with the matching PMCID.
+    """
+
+    pmcid_num = pmcid[3:] if pmcid.startswith("PMC") else pmcid  # remove 'PMC' prefix
+
+    # Parse with lxml (much faster than bs4)
+    root = etree.fromstring(xml_content.encode("utf-8"))
+
+    # XPath: find the article that has an <article-id pub-id-type="pmcid"> with the matching number
+    # This directly traverses the tree, no manual loops.
+    match = root.xpath(f".//article[article-meta/article-id[@pub-id-type='pmcid' = '{pmcid_num}']]")
+    if match:
+        # return string version of the first match
+        return etree.tostring(match[0], encoding="unicode")
+    else:
+        return None
+
+pmc_file_lookup = {}
 def _find_local_fulltext(pmcid, path):
-    files = glob.glob(f"{path}/PMC*_PMC*.xml*", recursive=False)
-    for f in files:
-        if f.endswith('.gz'):
-            os.system(f"gunzip -f {f}")  # decompress if gzipped
-            f = f[:-3]  # remove .gz extension
+    """
+    Given a path to a directory containing Europe PMC XML files,
+    find the full text XML for a given PMCID.
 
-        xml_range = re.search(r'PMC(\d+)_PMC(\d+)\.xml', f)
-        if xml_range:
-            start, end = map(int, xml_range.groups())
-            pmcid_num = int(pmcid[3:]) # remove 'PMC' prefix and convert to int
-            if start <= pmcid_num <= end:
-                # this is the correct file
-                with open(f, 'r', encoding='utf-8') as xml_file:
-                    xml_content = xml_file.read()
+    The files each contain multiple articles and are named like "PMC123456_PMC123999.xml.gz",
+    as provided by Europe PMC : <https://europepmc.org/ftp/oa/>
 
-                soup = BeautifulSoup(xml_content, "lxml-xml")
-                all_articles = soup.find_all("article")
-                if (end-pmcid_num) > (pmcid_num-start):
-                    # if the pmcid is closer to the end, search from the end
-                    all_articles.reverse()
+    Identify the correct file by checking the PMCID range in the filename,
+    then extract and return the matching article.
+    """
 
-                for article in all_articles:
-                    pmcid_tag = article.find("article-id", {"pub-id-type": "pmcid"})
-                    if pmcid_tag and pmcid_tag.get_text(strip=True) == str(pmcid_num):
-                        return str(article)
+    if pmcid not in pmc_file_lookup:
+        # build a lookup table for matching files in the directory
+        files = glob.glob(f"{path}/*{pmcid[:4]}*.xml*", recursive=False)
+        for f in files:
+            xml_range = re.search(r'PMC(\d+)_PMC(\d+)\.xml', f)
+            if xml_range:
+                start, end = map(int, xml_range.groups())
+                x = start
+                while x <= end:
+                    pmc_file_lookup[f"PMC{x}"] = f
+                    x += 1
+
+    if pmcid in pmc_file_lookup:
+        f = pmc_file_lookup[pmcid]
+        pmcid_num = int(pmcid[3:]) # remove 'PMC' prefix and convert to int
+
+        if f.endswith('.gz'): # if gzipped, decompress to a temporary file
+            uncompressed = f"/tmp/{os.path.basename(f[:-3])}"
+            with gzip.open(f, 'rb') as src, open(uncompressed, 'wb') as dst:
+                shutil.copyfileobj(src, dst)
+            f = uncompressed
+        elif f.endswith('.xml'): # otherwise, copy to a temporary location
+            copied = f"/tmp/{os.path.basename(f)}"
+            os.system(f"cp {f} {copied}")
+            f = copied
+        with open(f, 'r', encoding='utf-8') as xml_file:
+            xml_content = xml_file.read()
+        os.remove(f)  # remove the temporary file if it was created
+
+        return _extract_article_from_combined_xml(xml_content, pmcid_num)
+        # soup = BeautifulSoup(xml_content, "lxml-xml")
+        # all_articles = soup.find_all("article")
+        # if (end-pmcid_num) > (pmcid_num-start):
+        #     # if the pmcid is closer to the end, search from the end
+        #     all_articles.reverse()
+
+        # for article in all_articles:
+        #     pmcid_tag = article.find("article-id", {"pub-id-type": "pmcid"})
+        #     if pmcid_tag and pmcid_tag.get_text(strip=True) == str(pmcid_num):
+        #         return str(article)
 
     return None
 
-
 def get_fulltext_body(pmcid, path=None):
+    """
+    Fetch the full text body of a publication from Europe PMC by PMCID.
+    If a local path is provided, it will first check for a local XML file.
+    If not found, it will download the XML from Europe PMC.
+    """
+    xml = None
     if path:
         # find the matching record in the filesystem
         xml = _find_local_fulltext(pmcid, path)
@@ -243,6 +297,6 @@ def _preprocess_xml_table(table_wrap_tag):
                         prefix = "[COLUMN-HEADER] " if is_header else ""
                         row_text.append(f"{prefix}{text}")
                 if row_text:
-                    lines.append(" ".join(row_text))
+                    lines.append(" | ".join(row_text))
 
-    return "\n".join(lines) if lines else None
+    return ".\n".join(lines) if lines else None # include . for better sentence tokenization

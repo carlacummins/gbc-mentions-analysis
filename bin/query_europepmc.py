@@ -1,31 +1,25 @@
 #!/usr/bin/env python3
 
 import json
-import math
 import argparse
 import os
-import sqlalchemy as db
 
-from utils.gbc_db import get_gbc_connection
 from utils.europepmc import epmc_search
 
 parser = argparse.ArgumentParser(description="Query Europe PMC for resource mentions.")
 parser.add_argument('--outdir', type=str, required=True, help='Output directory for results')
+parser.add_argument('--resources', type=str, required=True, help='JSON file containing resource names and aliases')
 parser.add_argument('--chunks', type=int, default=1, help='Number of chunks to split the work into')
+
 args = parser.parse_args()
 
 os.makedirs(args.outdir, exist_ok=True)
+resource_aliases = json.load(open(args.resources))
 
-gcp_connector, db_engine, db_conn = get_gbc_connection(test=False)
-# db_conn = db_engine.connect()
-
-resources_sql = "SELECT short_name, common_name, full_name FROM resource WHERE is_latest= limit 3"
-resource_aliases = db_conn.execute(db.text(resources_sql)).fetchall()
-
-articles = {}
+articles_metadata = {}
 for r in resource_aliases:
     ras = list(set(r))
-    epmc_query = f"(SRC:MED OR SRC:PMC) AND ({" OR ".join([f'"{alias}"' for alias in ras if alias])})"  # Join aliases with OR for EPMC query
+    epmc_query = f"(SRC:PMC) AND ({" OR ".join([f'"{alias}"' for alias in ras if alias])})"  # Join aliases with OR for EPMC query
     print(f"Searching Europe PMC for: {epmc_query}")
     results = epmc_search(epmc_query, result_type='core')
 
@@ -37,10 +31,10 @@ for r in resource_aliases:
         if not this_id:
             continue
 
-        if this_id not in articles:
+        if this_id not in articles_metadata:
             # Initialize the article entry if it doesn't exist
             # Save only metadata required for the database entry
-            articles[this_id] = {
+            articles_metadata[this_id] = {
                 'pmcid': this_pmcid,
                 'pmid': this_pmid,
                 'title': article.get('title'),
@@ -54,14 +48,18 @@ for r in resource_aliases:
             }
 
 
-def split_dict_to_json_chunks(data, num_chunks, base_filename="chunk"):
-    # Convert dictionary items to list for slicing
-    items = list(data.items())
-    chunk_size = math.ceil(len(items) / num_chunks)
+# Split the idlist into chunks
+idlist = [a['pmcid'] for a in articles_metadata.values()]
+k, m = divmod(len(idlist), args.chunks)
+idlist_chunks = [idlist[i*k + min(i, m):(i+1)*k + min(i+1, m)] for i in range(args.chunks)]
+for i, chunk in enumerate(idlist_chunks):
+    chunk_file = os.path.join(args.outdir, f"pmc_idlist.chunk_{i+1}.txt")
+    with open(chunk_file, 'w') as f:
+        f.write("\n".join(chunk))
+    print(f"Saved chunk {i+1} with {len(chunk)} IDs to {chunk_file}")
 
-    for i in range(num_chunks):
-        chunk_dict = dict(items[i*chunk_size : (i+1)*chunk_size])
-        with open(f"{base_filename}_{i+1}.json", "w") as f:
-            json.dump(chunk_dict, f)
-
-split_dict_to_json_chunks(articles, args.chunks, os.path.join(args.outdir, "epmc_articles"))
+# Save the metadata to a JSON file
+metadata_file = os.path.join(args.outdir, "article_metadata.json")
+with open(metadata_file, 'w') as f:
+    json.dump(articles_metadata, f, indent=2)
+    print(f"Saved article metadata to {metadata_file}")

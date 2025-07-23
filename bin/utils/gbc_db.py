@@ -7,7 +7,9 @@ import sqlalchemy as db
 
 
 
-def get_gbc_connection(test=False, sqluser="gbcreader", sqlpass=None):
+def get_gbc_connection(test=False, readonly=True, sqluser="gbcreader", sqlpass=None):
+    if not readonly and not sqlpass:
+        raise ValueError("You must provide a SQL user credentials if not in readonly mode.")
 
     database = "gbc-publication-analysis:europe-west2:gbc-sql/gbc-publication-analysis"
     database += "-test" if test else ""

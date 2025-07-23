@@ -23,7 +23,7 @@ def _remove_substring_matches(mentions):
     return mentions
 
 case_sensitive_threshold = 30 # switch to case sensitive search after this number of matches for a resource
-def get_resource_mentions(textblocks, tableblocks, resource_names):
+def get_resource_mentions_separate(textblocks, tableblocks, resource_names):
     mentions = []
 
     # precompile regex patterns for each resource alias
@@ -86,6 +86,53 @@ def get_resource_mentions(textblocks, tableblocks, resource_names):
 
     return mentions
 
+def get_resource_mentions(text, resource_names):
+    mentions = []
+
+    # precompile regex patterns for each resource alias
+    # This is more efficient than compiling them on-the-fly in the loop
+    compiled_patterns = []
+    for resource in resource_names:
+        resource_name = resource[0]
+        for alias in resource:
+            pattern_case_insensitive = re.compile(rf"[^A-Za-z]{re.escape(alias.lower())}[^A-Za-z]")
+            compiled_patterns.append((resource_name, alias, pattern_case_insensitive))
+
+    # Tokenize the text into sentences and search for resource names
+    sentences = sent_tokenize(text)  # Use NLTK to split into sentences
+    for sentence in sentences:
+        sentence = sentence.replace("\n", " ")
+        s_lowered = sentence.lower()
+        this_sentence_mentions = []
+        for resource_name, alias, pattern_ci in compiled_patterns:
+            if pattern_ci.search(s_lowered):
+                this_sentence_mentions.append((sentence.strip(), alias, resource_name))
+
+        if len(this_sentence_mentions) > 1:
+            this_sentence_mentions = _remove_substring_matches(this_sentence_mentions)
+        mentions.extend(this_sentence_mentions)
+
+    # if a large number of matches are found for one resource, switch to case sensitive mode
+    filtered_mentions = []
+    alias_counts = Counter([m[1] for m in mentions])
+    for alias, count in alias_counts.items():
+        if count > case_sensitive_threshold:
+            print(f"⚠️ {count} matches found for {alias} - switching to case sensitive mode")
+            pattern_case_sensitive = re.compile(rf"[^A-Za-z]{re.escape(alias)}[^A-Za-z]")
+            for m in mentions:
+                if m[1] == alias and pattern_case_sensitive.search(m[0]):
+                    filtered_mentions.append(m)
+        else:
+            this_alias_mentions = [m for m in mentions if m[1] == alias]
+            filtered_mentions.extend(this_alias_mentions)
+
+    # Remove duplicates
+    mentions = list(set(filtered_mentions))
+    # Remove empty mentions
+    mentions = [m for m in mentions if m[0]]
+
+    return mentions
+
 def load_model(model_name, num_threads=1):
     if torch.cuda.is_available():
         print("\t🧠 Using CUDA GPU for inference")
@@ -104,7 +151,7 @@ def load_model(model_name, num_threads=1):
 
     return (tokenizer, model, device)
 
-def classify_mentions(pmcid, pmid, candidate_pairs, tokenizer=None, model=None, device=None):
+def classify_mentions(this_id, candidate_pairs, tokenizer=None, model=None, device=None):
     predictions = []
 
     for sentence, alias, resource in tqdm(candidate_pairs, desc="🔍 Classifying"):
@@ -116,8 +163,7 @@ def classify_mentions(pmcid, pmid, candidate_pairs, tokenizer=None, model=None, 
             if pred == 1:
                 predictions.append({
                     "prediction": 1,
-                    "pmcid": pmcid,
-                    "pmid": pmid,
+                    "id": this_id,
                     "resource_name": resource,
                     "matched_alias": alias,
                     "sentence": sentence,
@@ -126,8 +172,7 @@ def classify_mentions(pmcid, pmid, candidate_pairs, tokenizer=None, model=None, 
             else:
                 predictions.append({
                     "prediction": 0,
-                    "pmcid": pmcid,
-                    "pmid": pmid,
+                    "id": this_id,
                     "resource_name": resource,
                     "matched_alias": alias,
                     "sentence": sentence,
