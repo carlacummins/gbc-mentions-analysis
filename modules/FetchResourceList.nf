@@ -1,16 +1,16 @@
 process FETCH_RESOURCE_LIST {
+    tag "fetch_resource_list"
     label 'process_tiny'
     debug true
 
     input:
-    val resource_sql
-    path aliases_json
+    val(meta)
 
     output:
-    path("resource_list.json"), emit: resource_list
+    tuple val(meta), path("resource_list.json"), emit: resource_list
 
     script:
     """
-    fetch_resource_list.py --sql ${resource_sql} --aliases ${aliases_json} --out resource_list.json
+    fetch_resource_list.py --out resource_list.json ${task.ext.args}
     """
 }

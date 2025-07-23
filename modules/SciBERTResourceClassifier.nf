@@ -1,18 +1,19 @@
 process SCIBERT_RESOURCE_CLASSIFIER {
+    tag "scibert_resource_classifier.chunk_${meta.chunk}"
     label 'process_gpu'
     debug true
 
     input:
-    path input_dir
-    path model
-    path resources
+    tuple val(meta), path(input_dir), path(resources)
 
     output:
-    path("resource_mentions_summary.csv"), emit: classifications
-    path("prediction_counts.pkl"), emit: resource_counts
+    tuple val(meta), path(mentions_out), emit: classifications
+    tuple val(meta), path(counts_out), emit: resource_counts
 
     script:
+    mentions_out = "resource_mentions_summary.${meta.chunk}.csv"
+    counts_out = "prediction_counts.${meta.chunk}.pkl"
     """
-    classify_resource_mentions.py --indir ${input_dir} --model ${model} --resources ${resources} --mentions_out resource_mentions_summary.csv --counts_out prediction_counts.pkl
+    classify_resource_mentions.py --indir ${input_dir} --resources ${resources} --mentions_out ${mentions_out} --counts_out ${counts_out} ${task.ext.args}
     """
 }

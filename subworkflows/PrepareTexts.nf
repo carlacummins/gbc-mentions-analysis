@@ -3,21 +3,25 @@ include { FETCH_AND_PREPROCESS_ARTICLE } from '../modules/FetchAndPreprocessArti
 
 workflow PREPARE_TEXTS {
     take:
-        chunks
+        meta
         resources_json
-        local_xmls_path
 
     main:
-        query = QUERY_EUROPEPMC(chunks, resources_json)
-        query.idlists | flatten
-        | view
+        query = QUERY_EUROPEPMC(tuple(meta, resources_json))
+        // query.idlists | flatten
+        // | view
 
         query.idlists
         | map { idlist ->
-            [idlist, local_xmls_path]
-        } | FETCH_AND_PREPROCESS_ARTICLE
+            def this_meta = meta.clone()
+            def matcher = (idlist.name =~ /pmc_idlist\.chunk_(\d+)\.txt/)
+            if (matcher.find()) {
+                this_meta.chunk = matcher.group(1)  // store as string, or `.toInteger()` if you like
+            }
+            tuple(this_meta, idlist)
+        }
+        | FETCH_AND_PREPROCESS_ARTICLE
         | set { article_text_dirs }
-        // article_texts = FETCH_AND_PREPROCESS_ARTICLE(query.idlists, local_xmls_path)
 
     emit:
         text_dirs = article_text_dirs
@@ -25,5 +29,5 @@ workflow PREPARE_TEXTS {
 }
 
 workflow {
-    PREPARE_TEXTS(params.chunks, params.search, params.local_xmls_path)
+    PREPARE_TEXTS(params.meta, params.resource_list)
 }

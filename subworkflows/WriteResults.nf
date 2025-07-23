@@ -1,4 +1,4 @@
-include { WRITE_MENTIONS_TO_DB } from '../modules/WriteMentionsToDB.nf'
+include { WRITE_TO_DB } from '../modules/WriteMentionsToDB.nf'
 
 workflow WRITE_RESULTS {
     take:
@@ -6,7 +6,7 @@ workflow WRITE_RESULTS {
         resource_counts
 
     main:
-        write = WRITE_MENTIONS_TO_DB(classifications, resource_counts)
+        write = WRITE_TO_DB(classifications, resource_counts)
 
     emit:
         write

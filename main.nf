@@ -11,48 +11,29 @@ include { CLASSIFY_TEXTS } from './subworkflows/ClassifyTexts.nf'
 // Run the workflow
 workflow {
     main:
-        resource_list = FETCH_RESOURCE_LIST(
-            params.resource_sql,
-            params.aliases_json
-        )
+        (meta_ch, resources_json_ch) = FETCH_RESOURCE_LIST([:]) // meta data, e.g., { name: 'example' }
 
         // This version of the subworkflow fetches EuropePMC full text articles and preprocesses them.
         // Replace with your own data source as required.
-        texts = PREPARE_TEXTS(
-            params.chunks,
-            resource_list,
-            params.local_xmls_path
-        )
-        // texts_metadata = texts.metadata
+        texts = PREPARE_TEXTS(meta_ch, resources_json_ch)
 
+        // fan out chunks and classify each batch of texts
         texts.text_dirs
-        | map { text_dir ->
-            [text_dir, params.model, resource_list]
+        | map { meta, text_dir ->
+            tuple(meta, text_dir, params.model, resources_json_ch)
         } | CLASSIFY_TEXTS
         | set { classified_texts }
 
-        // WRITE_RESULTS(classified_texts.classifications, classified_texts.resource_counts)
-
-        // Write each classification to DB separately
+        // Write each classification to DB (separately per chunk)
         classified_texts.classifications
-        | map { classification ->
-            [classification, texts.metadata, params.dry_run, params.db_credentials_json]
+        | map { meta, classification ->
+            tuple(meta, classification, texts.metadata)
         }
         | WRITE_TO_DB
 
         // Collect all resource counts and merge/collate
         classified_texts.resource_counts
+        | map { _meta, file -> file }   // drop meta
         | collect()
         | RESOURCE_SPECIFICITY_SCORES
 }
-
-
-// workflow {
-//   fetch_epmc()
-
-//   classify_mentions(fetch_epmc.chunks)
-
-//   load_to_db(classify_mentions.true_mentions, fetch_epmc.metadata)
-
-//   aggregate_counts(classify_mentions.mention_counts)
-// }

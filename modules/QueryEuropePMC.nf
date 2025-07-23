@@ -1,14 +1,14 @@
 process QUERY_EUROPEPMC {
+    tag "query_europepmc"
     label 'process_tiny'
     debug true
 
     input:
-    val chunks
-    path resources_json
+    tuple val(meta), val(chunks), path(resources_json)
 
     output:
-    path("epmc_results/article_metadata.json"), emit: metadata
-    path("epmc_results/**.txt"), emit: idlists
+    tuple val(meta), path("epmc_results/article_metadata.json"), emit: metadata
+    tuple val(meta), path("epmc_results/**.txt"), emit: idlists
 
     script:
     """
