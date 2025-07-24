@@ -27,7 +27,7 @@ workflow {
         // Write each classification to DB (separately per chunk)
         classified_texts.classifications
         | map { meta, classification ->
-            tuple(meta, classification, texts.metadata)
+            tuple(meta, classification, texts.metadata, resources_json_ch)
         }
         | WRITE_TO_DB
 

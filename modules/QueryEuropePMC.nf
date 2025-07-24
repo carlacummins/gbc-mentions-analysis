@@ -12,6 +12,6 @@ process QUERY_EUROPEPMC {
 
     script:
     """
-    query_europepmc.py --outdir epmc_results --chunks ${chunks} --resources ${resources_json}
+    query_europepmc.py --outdir epmc_results --resources ${resources_json} ${task.ext.args}
     """
 }

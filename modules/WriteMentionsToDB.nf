@@ -4,13 +4,13 @@ process WRITE_TO_DB {
     debug true
 
     input:
-    tuple val(meta), path(classifications), path(resource_metadata)
+    tuple val(meta), path(classifications), path(resource_metadata), path(resources_json)
 
     // output:
     // tuple val(meta), path("resource_mentions_summary.csv"), emit: classifications
 
     script:
     """
-    write_mentions_to_db.py --classifications ${classifications} --metadata ${resource_metadata} ${task.ext.args}
+    write_mentions_to_db.py --classifications ${classifications} --metadata ${resource_metadata} --resources ${resources_json} ${task.ext.args}
     """
 }
