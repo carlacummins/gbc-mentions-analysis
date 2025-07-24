@@ -5,8 +5,6 @@ import pymysql
 import sqlalchemy as db
 
 
-
-
 def get_gbc_connection(test=False, readonly=True, sqluser="gbcreader", sqlpass=None):
     if not readonly and not sqlpass:
         raise ValueError("You must provide a SQL user credentials if not in readonly mode.")

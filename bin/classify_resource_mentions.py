@@ -31,6 +31,7 @@ filelist = glob.glob(os.path.join(args.indir, "*.txt")) if args.indir else [args
 
 # 📋 Load resource list
 resource_names = json.load(open(resource_aliases_path))
+resource_names = resource_names.values()
 print(f"\t📥 Loaded {len(resource_names)} resources")
 
 # 📦 Load Model
@@ -66,16 +67,16 @@ summary_df = (
         'sentence': lambda x: " || ".join(list(set(x)))  # unique sentences
     })
 )
-summary_df.rename(columns={'confidence': 'mean_confidence', 'sentence':'token_matches', 'prediction': 'num_matches'}, inplace=True)
+summary_df.rename(columns={'confidence': 'mean_confidence', 'sentence':'token_matches', 'prediction': 'match_count'}, inplace=True)
 
 if len(summary_df) > 0:
     print(tabulate([[" \n ✅ Text _has_ verified known biodata resource mention(s)\n "]], tablefmt='grid'))
     print("\n\n* 🧩 Resource Match Summary *")
-    print(tabulate(summary_df[['id', 'resource_name', 'matched_alias', 'num_matches', 'mean_confidence']], headers='keys', tablefmt='grid', showindex=False))
+    print(tabulate(summary_df[['id', 'resource_name', 'matched_alias', 'match_count', 'mean_confidence']], headers='keys', tablefmt='grid', showindex=False))
 
 else:
     print("\t‣ ❌ Text _does not_ mention a known biodata resource")
-summary_df[['id', 'resource_name', 'matched_alias', 'num_matches', 'mean_confidence']].to_csv(f"{args.mentions_out}", index=False)
+summary_df[['id', 'resource_name', 'matched_alias', 'match_count', 'mean_confidence']].to_csv(f"{args.mentions_out}", index=False)
 
 specificity_df = (
     class_df

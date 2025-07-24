@@ -18,7 +18,7 @@ os.makedirs(args.outdir, exist_ok=True)
 resource_aliases = json.load(open(args.resources))
 
 articles_metadata = {}
-for r in resource_aliases:
+for r in resource_aliases.values():
     ras = list(set(r))
     epmc_query = f"(SRC:PMC) AND ({" OR ".join([f'"{alias}"' for alias in ras if alias])})"  # Join aliases with OR for EPMC query
     print(f"Searching Europe PMC for: {epmc_query}")
