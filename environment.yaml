@@ -1,0 +1,30 @@
+name: mentions_analysis
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - nextflow
+  - python=3.11
+  - sqlalchemy
+  - pandas
+  - numpy
+  - pytorch
+  - transformers>=4.30
+  - scikit-learn
+  - ipykernel
+  - tqdm
+  - requests
+  - blis
+  - spacy
+  - spacy-model-en_core_web_sm
+  - nltk
+  - lxml
+  - beautifulsoup4
+  - pip
+  - pip:
+      - datasets
+      - pymysql
+      - cloud-sql-python-connector[pymysql]
+      - locationtagger
+      - googlemaps
+      - argparse
