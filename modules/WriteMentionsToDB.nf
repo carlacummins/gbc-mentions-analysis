@@ -4,7 +4,9 @@ process WRITE_TO_DB {
     debug true
 
     input:
-    tuple val(meta), path(classifications), path(resource_metadata), path(resources_json)
+    tuple val(meta), path(classifications)
+    path(resource_metadata)
+    path(resources_json)
 
     // output:
     // tuple val(meta), path("resource_mentions_summary.csv"), emit: classifications

@@ -3,11 +3,8 @@ process FETCH_RESOURCE_LIST {
     label 'process_tiny'
     debug true
 
-    input:
-    val(meta)
-
     output:
-    tuple val(meta), path("resource_list.json"), emit: resource_list
+    path("resource_list.json"), emit: resource_list
 
     script:
     """

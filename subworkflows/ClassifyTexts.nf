@@ -2,13 +2,11 @@ include { SCIBERT_RESOURCE_CLASSIFIER } from '../modules/SciBERTResourceClassifi
 
 workflow CLASSIFY_TEXTS {
     take:
-        meta
-        text
-        model
+        meta_text_ch // this is a tuple of (meta, text_dir)
         resources
 
     main:
-        classifier = SCIBERT_RESOURCE_CLASSIFIER(tuple(meta, text, model, resources))
+        classifier = SCIBERT_RESOURCE_CLASSIFIER(meta_text_ch, resources)
 
     emit:
         classifications = classifier.classifications
@@ -16,5 +14,5 @@ workflow CLASSIFY_TEXTS {
 }
 
 workflow {
-    CLASSIFY_TEXTS(params.meta, params.text_dirs, params.model, params.resource_list)
+    CLASSIFY_TEXTS(params.meta_text_ch, params.resource_list)
 }

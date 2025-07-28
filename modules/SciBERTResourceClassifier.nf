@@ -4,7 +4,8 @@ process SCIBERT_RESOURCE_CLASSIFIER {
     debug true
 
     input:
-    tuple val(meta), path(input_dir), path(resources)
+    tuple val(meta), path(input_dir)
+    path(resources)
 
     output:
     tuple val(meta), path(mentions_out), emit: classifications

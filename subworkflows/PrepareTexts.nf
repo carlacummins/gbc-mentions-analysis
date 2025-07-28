@@ -3,17 +3,16 @@ include { FETCH_AND_PREPROCESS_ARTICLE } from '../modules/FetchAndPreprocessArti
 
 workflow PREPARE_TEXTS {
     take:
-        meta
         resources_json
 
     main:
-        query = QUERY_EUROPEPMC(tuple(meta, resources_json))
+        query = QUERY_EUROPEPMC(resources_json)
         // query.idlists | flatten
         // | view
 
         query.idlists
         | map { idlist ->
-            def this_meta = meta.clone()
+            def this_meta = [:]
             def matcher = (idlist.name =~ /pmc_idlist\.chunk_(\d+)\.txt/)
             if (matcher.find()) {
                 this_meta.chunk = matcher.group(1)  // store as string, or `.toInteger()` if you like
@@ -29,5 +28,5 @@ workflow PREPARE_TEXTS {
 }
 
 workflow {
-    PREPARE_TEXTS(params.meta, params.resource_list)
+    PREPARE_TEXTS(params.resource_list)
 }

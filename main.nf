@@ -11,25 +11,17 @@ include { CLASSIFY_TEXTS } from './subworkflows/ClassifyTexts.nf'
 // Run the workflow
 workflow {
     main:
-        (meta_ch, resources_json_ch) = FETCH_RESOURCE_LIST([:]) // meta data, e.g., { name: 'example' }
+        resources_json = FETCH_RESOURCE_LIST()
 
         // This version of the subworkflow fetches EuropePMC full text articles and preprocesses them.
         // Replace with your own data source as required.
-        texts = PREPARE_TEXTS(meta_ch, resources_json_ch)
+        texts = PREPARE_TEXTS(resources_json)
 
         // fan out chunks and classify each batch of texts
-        texts.text_dirs
-        | map { meta, text_dir ->
-            tuple(meta, text_dir, params.model, resources_json_ch)
-        } | CLASSIFY_TEXTS
-        | set { classified_texts }
+        classified_texts = CLASSIFY_TEXTS(texts.text_dirs, resources_json)
 
         // Write each classification to DB (separately per chunk)
-        classified_texts.classifications
-        | map { meta, classification ->
-            tuple(meta, classification, texts.metadata, resources_json_ch)
-        }
-        | WRITE_TO_DB
+        WRITE_TO_DB(classified_texts.classifications, texts.metadata, resources_json)
 
         // Collect all resource counts and merge/collate
         classified_texts.resource_counts
