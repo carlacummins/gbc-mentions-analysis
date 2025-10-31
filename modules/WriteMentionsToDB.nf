@@ -1,11 +1,11 @@
 process WRITE_TO_DB {
     tag "write_to_db.chunk_${meta.chunk}"
-    label 'process_tiny'
-    debug true
+    label 'process_single'
+    // debug true
 
     input:
     tuple val(meta), path(classifications)
-    path(resource_metadata)
+    path(texts_metadata_dir)
     path(resources_json)
 
     // output:
@@ -13,6 +13,6 @@ process WRITE_TO_DB {
 
     script:
     """
-    write_mentions_to_db.py --classifications ${classifications} --metadata ${resource_metadata} --resources ${resources_json} ${task.ext.args}
+    write_mentions_to_db.py --classifications ${classifications} --metadata-dir ${texts_metadata_dir} --resources ${resources_json} ${task.ext.args}
     """
 }

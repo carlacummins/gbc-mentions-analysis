@@ -3,7 +3,7 @@
 import json
 import argparse
 import sqlalchemy as db
-from utils.gbc_db import get_gbc_connection
+from gbcutils.db import get_gbc_connection
 
 parser = argparse.ArgumentParser(description="Fetch resource list from the database.")
 parser.add_argument('--out', type=str, required=True, help='Output file for results')

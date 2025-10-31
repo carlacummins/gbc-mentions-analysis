@@ -7,24 +7,24 @@ workflow PREPARE_TEXTS {
 
     main:
         query = QUERY_EUROPEPMC(resources_json)
-        // query.idlists | flatten
-        // | view
 
-        query.idlists
-        | map { idlist ->
-            def this_meta = [:]
-            def matcher = (idlist.name =~ /pmc_idlist\.chunk_(\d+)\.txt/)
+		query.idlists
+        | flatten
+		| map { idlist ->
+			def this_meta = [:]
+            def matcher = (idlist =~ /pmc_idlist\.chunk_(\d+)\.txt/)
             if (matcher.find()) {
                 this_meta.chunk = matcher.group(1)  // store as string, or `.toInteger()` if you like
             }
             tuple(this_meta, idlist)
         }
-        | FETCH_AND_PREPROCESS_ARTICLE
-        | set { article_text_dirs }
+		| set {idlist_chunks}
+
+        article_text_dirs = FETCH_AND_PREPROCESS_ARTICLE(idlist_chunks)
 
     emit:
         text_dirs = article_text_dirs
-        metadata = query.metadata
+        metadata_dir = query.metadata_dir
 }
 
 workflow {

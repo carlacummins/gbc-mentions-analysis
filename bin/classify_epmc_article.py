@@ -8,8 +8,8 @@ import sqlalchemy as db
 from nltk.tokenize import sent_tokenize
 import pandas as pd
 
-from utils.europepmc import query_europepmc, get_fulltext_body
-from utils.scibert_classify import get_resource_mentions, classify_mentions, load_model
+from gbcutils.europepmc import query_europepmc, get_fulltext_body
+from gbcutils.scibert_classify import get_resource_mentions, classify_mentions, load_model
 
 parser = argparse.ArgumentParser(description="Classify resource mentions in a publication.")
 parser.add_argument("-pmid", type=str, default="", help="PubMed ID of the publication")

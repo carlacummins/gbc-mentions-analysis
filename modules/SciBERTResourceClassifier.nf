@@ -1,7 +1,7 @@
 process SCIBERT_RESOURCE_CLASSIFIER {
     tag "scibert_resource_classifier.chunk_${meta.chunk}"
     label 'process_gpu'
-    debug true
+    // debug true
 
     input:
     tuple val(meta), path(input_dir)

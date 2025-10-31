@@ -12,13 +12,13 @@ merged = pd.concat(dfs, ignore_index=True)
 # group by resource_name and prediction to sum counts
 all_prediction_counts = (
     merged
-    .groupby(["resource_name", "prediction"], as_index=False)['count']
+    .groupby(["resource_name", "matched_alias", "prediction"], as_index=False)['count']
     .sum()
 )
 
 # Pivot prediction into columns
 specificity_score = all_prediction_counts.pivot_table(
-    index='resource_name',
+    index=['resource_name', 'matched_alias'],
     columns='prediction',
     values='count',
     fill_value=0

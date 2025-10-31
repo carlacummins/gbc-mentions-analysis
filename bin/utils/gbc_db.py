@@ -24,4 +24,5 @@ def get_gbc_connection(test=False, readonly=True, sqluser="gbcreader", sqlpass=N
         return conn
 
     cloud_engine = db.create_engine("mysql+pymysql://", creator=getcloudconn, pool_recycle=60 * 5, pool_pre_ping=True)
+    cloud_engine.execution_options(isolation_level="READ COMMITTED")
     return (gcp_connector, cloud_engine, cloud_engine.connect())

@@ -7,6 +7,8 @@ import torch
 from nltk.tokenize import sent_tokenize
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
+VERBOSE = False
+
 def _remove_substring_matches(mentions):
     aliases = [m[1].lower() for m in mentions]
     unique_aliases = list(set(aliases))
@@ -23,7 +25,7 @@ def _remove_substring_matches(mentions):
     return mentions
 
 case_sensitive_threshold = 30 # switch to case sensitive search after this number of matches for a resource
-def get_resource_mentions_separate(textblocks, tableblocks, resource_names):
+def get_resource_mentions_separate(textblocks, tableblocks, resource_names, case_sensitive_resources=[]):
     mentions = []
 
     # precompile regex patterns for each resource alias
@@ -32,8 +34,13 @@ def get_resource_mentions_separate(textblocks, tableblocks, resource_names):
     for resource in resource_names:
         resource_name = resource[0]
         for alias in resource:
-            pattern_case_insensitive = re.compile(rf"[^A-Za-z]{re.escape(alias.lower())}[^A-Za-z]")
-            compiled_patterns.append((resource_name, alias, pattern_case_insensitive))
+            if resource_name in case_sensitive_resources:
+                pattern_case_sensitive = re.compile(rf"[^A-Za-z]{re.escape(alias)}[^A-Za-z]")
+                compiled_patterns.append((resource_name, alias, pattern_case_sensitive))
+            else:
+                # Use case-insensitive pattern for all other resources
+                pattern_case_insensitive = re.compile(rf"[^A-Za-z]{re.escape(alias.lower())}[^A-Za-z]")
+                compiled_patterns.append((resource_name, alias, pattern_case_insensitive))
 
     # Split the fulltext into sentences and table rows
     for block in textblocks:
@@ -70,7 +77,8 @@ def get_resource_mentions_separate(textblocks, tableblocks, resource_names):
     alias_counts = Counter([m[1] for m in mentions])
     for alias, count in alias_counts.items():
         if count > case_sensitive_threshold:
-            print(f"⚠️ {count} matches found for {alias} - switching to case sensitive mode")
+            if VERBOSE:
+                print(f"⚠️ {count} matches found for {alias} - switching to case sensitive mode")
             pattern_case_sensitive = re.compile(rf"[^A-Za-z]{re.escape(alias)}[^A-Za-z]")
             for m in mentions:
                 if m[1] == alias and pattern_case_sensitive.search(m[0]):
@@ -86,7 +94,30 @@ def get_resource_mentions_separate(textblocks, tableblocks, resource_names):
 
     return mentions
 
-def get_resource_mentions(text, resource_names):
+def _normalize_alias_for_regex(alias: str) -> str:
+    """
+    Turn a resource alias into a regex-safe pattern that matches flexibly.
+      - Spaces -> \s+   (any whitespace)
+      - Hyphens/dashes -> a class of common Unicode dashes
+      - Dots -> \.?     (optional literal dot)
+    Returns a regex string (ready for insertion into a larger pattern).
+    """
+    # Escape first so regex metachars in alias are treated literally
+    escaped = re.escape(alias)
+
+    # Replace escaped space ('\\ ') with regex \s+
+    escaped = escaped.replace(r'\ ', r'\s+')
+
+    # Replace escaped dash ('\-') with a set of dash-like characters
+    dash_class = r'[-\u2010\u2011\u2012\u2013\u2014\u2212]'
+    escaped = escaped.replace(r'\-', dash_class)
+
+    # Replace escaped dot ('\.') with optional dot pattern
+    escaped = escaped.replace(r'\.', r'\.?')
+
+    return escaped
+
+def get_resource_mentions(text, resource_names, case_sensitive_resources=[]):
     mentions = []
 
     # precompile regex patterns for each resource alias
@@ -95,8 +126,15 @@ def get_resource_mentions(text, resource_names):
     for resource in resource_names:
         resource_name = resource[0]
         for alias in resource:
-            pattern_case_insensitive = re.compile(rf"[^A-Za-z]{re.escape(alias.lower())}[^A-Za-z]")
-            compiled_patterns.append((resource_name, alias, pattern_case_insensitive))
+            if resource_name in case_sensitive_resources:
+                alias_norm = _normalize_alias_for_regex(alias)
+                pattern_case_sensitive = re.compile(rf"(?<![A-Za-z]){alias_norm}(?![A-Za-z])")
+                compiled_patterns.append((resource_name, alias, pattern_case_sensitive, True))
+            else:
+                # Use case-insensitive pattern for all other resources
+                alias_norm = _normalize_alias_for_regex(alias.lower())
+                pattern_case_insensitive = re.compile(rf"(?<![A-Za-z]){alias_norm}(?![A-Za-z])")
+                compiled_patterns.append((resource_name, alias, pattern_case_insensitive, False))
 
     # Tokenize the text into sentences and search for resource names
     sentences = sent_tokenize(text)  # Use NLTK to split into sentences
@@ -104,8 +142,10 @@ def get_resource_mentions(text, resource_names):
         sentence = sentence.replace("\n", " ")
         s_lowered = sentence.lower()
         this_sentence_mentions = []
-        for resource_name, alias, pattern_ci in compiled_patterns:
-            if pattern_ci.search(s_lowered):
+        for resource_name, alias, pattern, is_case_sensitive in compiled_patterns:
+            if not is_case_sensitive and pattern.search(s_lowered):
+                this_sentence_mentions.append((sentence.strip(), alias, resource_name))
+            elif is_case_sensitive and pattern.search(sentence):
                 this_sentence_mentions.append((sentence.strip(), alias, resource_name))
 
         if len(this_sentence_mentions) > 1:
@@ -116,9 +156,10 @@ def get_resource_mentions(text, resource_names):
     filtered_mentions = []
     alias_counts = Counter([m[1] for m in mentions])
     for alias, count in alias_counts.items():
-        if count > case_sensitive_threshold:
-            print(f"⚠️ {count} matches found for {alias} - switching to case sensitive mode")
-            pattern_case_sensitive = re.compile(rf"[^A-Za-z]{re.escape(alias)}[^A-Za-z]")
+        if count > case_sensitive_threshold and alias not in case_sensitive_resources:
+            if VERBOSE:
+                print(f"⚠️ {count} matches found for {alias} - switching to case sensitive mode")
+            pattern_case_sensitive = re.compile(rf"(?<![A-Za-z]){re.escape(alias)}(?![A-Za-z])")
             for m in mentions:
                 if m[1] == alias and pattern_case_sensitive.search(m[0]):
                     filtered_mentions.append(m)
@@ -135,13 +176,16 @@ def get_resource_mentions(text, resource_names):
 
 def load_model(model_name, num_threads=1):
     if torch.cuda.is_available():
-        print("\t🧠 Using CUDA GPU for inference")
+        if VERBOSE:
+            print("\t🧠 Using CUDA GPU for inference")
         device = torch.device("cuda")
     elif torch.backends.mps.is_available():
-        print("\t🧠 Using Apple MPS GPU for inference")
+        if VERBOSE:
+            print("\t🧠 Using Apple MPS GPU for inference")
         device = torch.device("mps")
     else:
-        print("\t🧠 Using CPU for inference")
+        if VERBOSE:
+            print("\t🧠 Using CPU for inference")
         device = torch.device("cpu")
         torch.set_num_threads(num_threads)
 
