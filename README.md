@@ -49,23 +49,34 @@ It runs in four main stages:
 An overview of the process is shown below:
 ![Workflow Overview Diagram](docs/workflow_overview_diagram.png)
 
-# ⚙️ Setup
+## ⚙️ Setup
 
-To reproduce this workflow, you’ll need **Nextflow (DSL2)** and **Conda** (or **Mamba**) installed locally.
-
+#### 1. Clone this repository:
 ```bash
-# 1. Clone the repository
-git clone https://github.com/<your-username>/gbc-mentions-analysis.git
+git clone https://github.com/globalbiodata/gbc-mentions-analysis.git
 cd gbc-mentions-analysis
-
-# 2. Create and activate the Conda environment
-conda env create -f environment.yml
-conda activate gbc_mentions
 ```
 
-Ensure `nextflow` is available on your `PATH`:
+#### 2. Create and activate the conda environment:
+```bash
+conda env create -f environment.yml
+conda activate gbc-accession-loading
+```
+
+To verify, ensure `nextflow` is available on your `PATH`:
 ```bash
 nextflow -version
+```
+
+#### 3. Install the core `globalbiodata` modules from the [gbc-publication-analysis](https://github.com/globalbiodata/gbc-publication-analysis) repository:
+```bash
+git clone https://github.com/globalbiodata/gbc-publication-analysis
+export PYTHONPATH=$PWD/gbc-publication-analysis:$PYTHONPATH
+```
+
+4. Verify the installation:
+```bash
+python -m globalbiodata
 ```
 
 # ▶️ Running the Workflow
@@ -92,3 +103,18 @@ nextflow run . \
     --chunks 2000
 ```
 
+---
+
+### Test Run
+
+To perform a quick test run of the workflow, there are 2 test profile options.
+
+#### 1. test workflow, without writing to database
+```bash
+nextflow run . -profile test_no_write
+```
+
+#### 2. test workflow, including database write
+```bash
+nextflow run . -profile test_with_write
+```
