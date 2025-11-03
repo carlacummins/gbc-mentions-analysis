@@ -27,5 +27,4 @@ dependencies:
       - cloud-sql-python-connector[pymysql]
       - locationtagger
       - googlemaps
-      - argparse
       - lxml[html_clean]
