@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+"""
+Given a PubMed ID or PMC ID, fetch the publication from Europe PMC, identify resource mentions,
+classify them using a SciBERT model, and save the results to an output directory.
+
+Mostly used for testing and prototyping the mention classification pipeline.
+"""
+
 import os
 import json
 import argparse

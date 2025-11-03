@@ -1,3 +1,5 @@
+// Writes classified mentions from CSV into the database (wrapper for write_mentions_to_db.py)
+
 process WRITE_TO_DB {
     tag "write_to_db.chunk_${meta.chunk}"
     label 'process_single'

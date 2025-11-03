@@ -1,3 +1,5 @@
+// Fetches the resource list from the database and expands with provided aliases (wrapper for fetch_resource_list.py)
+
 process FETCH_RESOURCE_LIST {
     tag "fetch_resource_list"
     label 'process_tiny'

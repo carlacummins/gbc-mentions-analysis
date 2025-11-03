@@ -1,3 +1,5 @@
+// Computes resource specificity scores from resource mention counts (wrapper for resource_specificity_scores.py)
+
 process RESOURCE_SPECIFICITY_SCORES {
     tag "resource_specificity_scores"
     label 'process_tiny'

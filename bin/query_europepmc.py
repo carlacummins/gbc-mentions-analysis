@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+"""
+Query Europe PMC searhch API for articles containing names/aliases of known biodata resources.
+Store article metadata in sharded JSONL files and a SQLite database of PMC IDs. Multiple threads
+are used to parallelize I/O-bound Europe PMC queries.
+
+The resulting PMC ID list is deduplicated (using an SQLite database), sorted and split into chunks
+for downstream processing.
+"""
+
+
 import json
 import argparse
 import os
@@ -56,14 +66,16 @@ writers_lock = threading.Lock()
 work_q: queue.Queue = queue.Queue(maxsize=args.queue_size)
 
 
-def get_writer(k: int):
+def _get_writer(k: int) -> gzip.GzipFile:
+    """Get or create a shard writer for the given shard key."""
     with writers_lock:
         if k not in writers:
             writers[k] = gzip.open(shard_path(k, basepath=metadata_outdir, shards=args.shards), 'at', encoding='utf-8')
         return writers[k]
 
 
-def writer_thread_fn():
+def _writer_thread_fn():
+    """Thread function for writing metadata and PMC IDs."""
     try:
         conn = sqlite3.connect(ids_db_path)
         conn.execute("PRAGMA journal_mode=WAL;")
@@ -82,7 +94,7 @@ def writer_thread_fn():
             cur.execute("INSERT OR IGNORE INTO pmc_ids(pmc_id) VALUES (?)", (this_pmcid,))
             if cur.rowcount == 1:
                 k = shard_key(this_pmcid, args.shards)
-                fh = get_writer(k)
+                fh = _get_writer(k)
                 fh.write(json.dumps(this_article_metadata, ensure_ascii=False) + "\n")
             if time.time() - last_commit > 5:
                 conn.commit()
@@ -102,19 +114,37 @@ def writer_thread_fn():
             pass
 
 
-writer_thread = threading.Thread(target=writer_thread_fn, daemon=True)
+writer_thread = threading.Thread(target=_writer_thread_fn, daemon=True)
 writer_thread.start()
 
 # -----------------------
 # Query producers (thread pool)
 # -----------------------
 
-def build_resource_query(r_aliases):
+def build_resource_query(r_aliases: list[str]) -> str:
+    """
+    Build a query string for the given resource aliases.
+
+    Args:
+        r_aliases (list[str]): List of resource name aliases.
+
+    Returns:
+        str: Europe PMC query string.
+    """
     ras = list(set(r_aliases))
     joined_aliases = " OR ".join(f'\"{alias}\"' for alias in ras if alias)
     return f"(HAS_FT:Y) AND ({joined_aliases})"
 
-def build_pmcids_query(pmcids):
+def build_pmcids_query(pmcids: list[str]) -> str:
+    """
+    Build a query string for the given PMC IDs.
+
+    Args:
+        pmcids (list[str]): List of PMC IDs.
+
+    Returns:
+        str: Europe PMC query string.
+    """
     ids = list(set(pmcids))
     joined_ids = " OR ".join(f'PMCID:({pmcid})' for pmcid in ids if pmcid)
     return f"(HAS_FT:Y) AND ({joined_ids})"
@@ -124,7 +154,16 @@ epmc_fields = [
     "authorList", "citedByCount", "grantsList", "keywordList", "meshHeadingList"
 ]
 BATCH_SIZE = 10_000
-def produce_for_resource(r_aliases):
+def produce_for_resource(r_aliases: list[str]) -> int:
+    """
+    Query Europe PMC API to produce metadata for articles matching the given resource aliases.
+
+    Args:
+        r_aliases (list[str]): List of resource name aliases.
+
+    Returns:
+        int: Number of articles produced.
+    """
     epmc_query = build_resource_query(r_aliases)
     if args.verbose:
         print(f"Searching Europe PMC for: {epmc_query}")
@@ -190,7 +229,16 @@ def produce_for_resource(r_aliases):
 
     return produced
 
-def produce_for_ids(pmc_ids):
+def produce_for_ids(pmc_ids: list[str]) -> int:
+    """
+    Query Europe PMC API to produce metadata for articles matching the given PMC IDs.
+
+    Args:
+        pmc_ids (list[str]): List of PMC IDs.
+
+    Returns:
+        int: Number of articles produced.
+    """
     epmc_query = build_pmcids_query(pmc_ids)
     if args.verbose:
         print(f"Searching Europe PMC for: {epmc_query}")

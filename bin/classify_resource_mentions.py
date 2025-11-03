@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+"""
+Given a text file or directory of text files containing publication text, identify resource mentions,
+classify them using a SciBERT model, and save the results to output files.
+"""
+
 import os
 import json
 import argparse
@@ -77,14 +82,6 @@ summary_df = (
     })
 )
 summary_df.rename(columns={'confidence': 'mean_confidence', 'sentence':'token_matches', 'prediction': 'match_count'}, inplace=True)
-
-# if len(summary_df) > 0:
-#     print(tabulate([[" \n ✅ Text _has_ verified known biodata resource mention(s)\n "]], tablefmt='grid'))
-#     print("\n\n* 🧩 Resource Match Summary *")
-#     print(tabulate(summary_df[['id', 'resource_name', 'matched_alias', 'match_count', 'mean_confidence']], headers='keys', tablefmt='grid', showindex=False))
-
-# else:
-#     print("\t‣ ❌ Text _does not_ mention a known biodata resource")
 
 # write files
 summary_df[['id', 'resource_name', 'matched_alias', 'match_count', 'mean_confidence']].to_csv(f"{args.mentions_out}", index=False)

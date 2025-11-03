@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+
+"""
+For each resource mention classification in a CSV file, write the mentions to the database.
+
+This includes creating Publication and ResourceMention objects in the GBC database using the
+GlobalBioData Python API (https://globalbiodata.github.io/gbc-publication-analysis/), and
+metadata from Europe PMC, saved in sharded JSONL files.
+"""
+
 import argparse
 import json
 import os
@@ -104,21 +113,6 @@ try:
                 # If the publication is the same as the previous one, reuse it
                 gbc_publication = previous_publication
             else:
-            #     # Fetch or create the publication in the database
-            #     gbc_publication = gbc.fetch_publication({'pmc_id': article_metadata['pmcid']}, conn=db_conn, debug=args.debug)
-
-            #     # HACK: handle partial data from previous runs
-            #     force_publication_update = False
-            #     if gbc_publication and (not gbc_publication.affiliation and not gbc_publication.citation_count and not gbc_publication.keywords):
-            #         print(f"[INFO] Updating incomplete publication data for {article_id}") if args.debug else None
-            #         gbc_publication = None  # Force re-creation with full data
-            #         force_publication_update = True
-            #     else:
-            #         previous_publication = gbc_publication
-
-            # if not gbc_publication:
-            #     # If publication not found, create a new one
-
                 # create new publication
                 print("[INFO] Creating new Publication from EuropePMC result... ") if args.debug else None
                 pprint(article_metadata) if args.debug else None
@@ -128,9 +122,6 @@ try:
 
             print("[INFO] working with publication: ", gbc_publication) if args.debug else None
             mentions_data["publication"] = gbc_publication
-            # if force_publication_update:
-            #     print(f"[INFO] Force updating publication {gbc_publication.pmc_id} in the database...") if args.debug else None
-            #     gbc_publication.write(conn=db_conn, debug=args.debug, force=True)
 
             gbc_mention = gbc.ResourceMention(mentions_data)
             gbc_mention.write(conn=db_conn, debug=args.debug)

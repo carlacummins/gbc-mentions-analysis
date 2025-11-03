@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+"""
+Fetch resource list from the database and save to a JSON file.
+Optionally include additional aliases for resources from a provided JSON file.
+
+This will be used to load resource names and aliases for mention detection and classification.
+"""
+
 import json
 import argparse
 import sqlalchemy as db

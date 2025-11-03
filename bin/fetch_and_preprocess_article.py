@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+"""
+Fetch full text articles from Europe PMC by PMC ID(s), preprocess, and save as text files.
+Preprocessing extracts text and tables from XML, cleans tags, and formats output.
+Each article is saved as a single cleaned text file.
+"""
+
 import os
 import argparse
 from gbcutils.europepmc import get_fulltext_body

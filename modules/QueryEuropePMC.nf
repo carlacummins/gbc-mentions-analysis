@@ -1,3 +1,5 @@
+// Queries Europe PMC for articles containing provided resource names (wrapper for query_europepmc.py)
+
 process QUERY_EUROPEPMC {
     tag "query_europepmc"
     label 'process_medium'

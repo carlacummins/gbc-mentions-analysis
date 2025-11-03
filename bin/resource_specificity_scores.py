@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+"""
+For a list of prediction counts pickled DataFrames, merge them and compute
+specificity scores for each resource based on the proportion of positive predictions.
+
+The resulting specificity scores are saved to a CSV file.
+"""
+
 import sys
 import pandas as pd
 
